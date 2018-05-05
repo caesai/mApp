@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+script:
+  - npm run build
+deploy:
+  provider: firebase
+  token:
+    secure: "kmeZa3gRcsdlvNAyPIZFTMpjC8U/TKuf8DimTxsryjmwsByrc3Z56FDVZloIw/g4nhpC8WAEjKmp0qaolqI08GHu/aQbL22RGPguNg907P4gHTCNdfOpb5MI4lsxT9gjkdqBlYeRcG7zqXs4sRX7xi9DZd29O4qXHD3pUF5BJo/3ndSvrjSzqYmhtZsrKTP5VVd2lck6TIaURLZ/i4BqvzvrRQCQjxrmEpTkt8SEc5Kg+CP9zzjI1FD+vdBZ26W5ki1dfVZaxtfwbhNGB9DZjzxkX5W3qCAHmUqUpNxWvkUhVpHpFbif8Iv6A9nfrtBfOFyKFCwHJgmnZ4xSwtB8P7zC2UqpK8QKA22BwDmIA+DS+YhkK5G4/r6wG7Y+vZmdiaGRYUEAxRhkgMXVD4M0OTRYDLEV79J2LKUWzf6kShzMsiQqNqUPbbrdi02Z/RfNTz7C6T7HoBnd635OCu82p9gRpN9JWzTTdj5DlYKRz7yAEFJ7Qa18G3FSdWt+ETrwrIhjR/rwbh6udOdne25tCstgxE1Li8kU96FE5IIlLFDF6hhVSKee1oRqO3/aPbb3B9lYvwTUgTU5JygfQbXbOXWG3NZKrpSwKBYdQ/FnrlKpla7j8AbuGOpf8SgVPaRoxlcrialB64LNUk8fXoom8WnV1vOgnjoFssvzHeguUTQ="
+  project: "mining-889ab"
+  skip_cleanup: true
