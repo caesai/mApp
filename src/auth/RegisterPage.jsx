@@ -39,14 +39,13 @@ class RegisterPage extends Component {
 
     return (
       <div>
-        <Typography variant="headline">Registration</Typography>
+        <Typography variant="title">Generated mnemonic key</Typography>
+        <Typography>{mnemonic}</Typography>
         <Form onSubmit={this.handleSubmit} buttonLabel="Register">
           <Field name="name" />
           <Field name="email" />
           <Field name="password" />
         </Form>
-        <Typography variant="title">Mnemonic key</Typography>
-        <Typography>{mnemonic}</Typography>
       </div>
     );
   }
