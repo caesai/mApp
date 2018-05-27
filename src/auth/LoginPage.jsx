@@ -17,7 +17,7 @@ class LoginPage extends Component {
       <div>
         <Typography variant="headline">Login</Typography>
         <Form onSubmit={this.handleSubmit} buttonLabel="Login">
-          <Field name="email" />
+          <Field name="email" rule="email" />
           <Field name="password" />
         </Form>
       </div>

@@ -1,5 +1,23 @@
 import React, { Component } from 'react';
+import isEmail from 'validator/lib/isEmail';
+import isAlpha from 'validator/lib/isAlpha';
 import Button from 'core/components/Button';
+
+const validateField = (name, value, rule) => {
+  if (value === undefined) {
+    return '';
+  }
+
+  switch (rule) {
+    case 'email':
+      return isEmail(value) ? '' : 'Invalid email';
+    case 'alpha': {
+      return isAlpha(value) ? '' : 'Not valid name';
+    }
+    default:
+      return '';
+  }
+};
 
 class Form extends Component {
   state = {
@@ -10,13 +28,13 @@ class Form extends Component {
     this.props.onSubmit(this.state.data);
   };
 
-  handleFieldChange = (name, value) => {
+  handleFieldChange = ({ target }) => {
     const { data: datPrev } = this.state;
     const data = {
       ...datPrev,
     };
 
-    data[name] = value;
+    data[target.name] = target.value;
 
     this.setState({ data });
   };
@@ -28,15 +46,19 @@ class Form extends Component {
     return (
       <div>
         {
-          children.map(field => (
-            field.type({
-              key: field.props.name,
-              name: field.props.name,
+          children.map((field) => {
+            const { props: { name, label, rule } } = field;
+            const value = data[name];
+
+            return field.type({
+              name,
+              label,
+              value,
+              key: name,
+              error: validateField(name, value, rule),
               onChange: this.handleFieldChange,
-              value: data[field.props.name] || '',
-              label: field.label,
-            })
-          ))
+            });
+          })
         }
         <Button
           variant="raised"

@@ -42,8 +42,8 @@ class RegisterPage extends Component {
         <Typography variant="title">Generated mnemonic key</Typography>
         <Typography>{mnemonic}</Typography>
         <Form onSubmit={this.handleSubmit} buttonLabel="Register">
-          <Field name="name" />
-          <Field name="email" />
+          <Field name="name" rule="alpha" />
+          <Field name="email" rule="email" />
           <Field name="password" />
         </Form>
       </div>
