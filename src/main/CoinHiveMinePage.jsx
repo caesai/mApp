@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { startMining } from '../coinHive';
 
-class App extends Component {
+class CoinHiveMinePage extends Component {
   state = {
     hashesPerSecond: 0,
     totalHashes: 0,
@@ -15,7 +15,7 @@ class App extends Component {
 
   handleStopClick = () => {
     this.miner.stop();
-  }
+  };
 
   handleStartClick = () => {
     const { secretKey } = this.state;
@@ -58,4 +58,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default CoinHiveMinePage;

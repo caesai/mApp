@@ -8,7 +8,7 @@ const htmlIndexPath = resolvePath('public/index.html');
 module.exports = {
   name: 'client',
   devtool: 'source-map',
-  entry: './src/index.jsx',
+  entry: ['babel-polyfill', './src/index.jsx'],
   target: 'web',
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -20,6 +20,10 @@ module.exports = {
     module: 'empty',
   },
   resolve: {
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules',
+    ],
     extensions: ['.js', '.jsx'],
   },
   module: {
@@ -49,5 +53,6 @@ module.exports = {
     contentBase: 'dist',
     hot: true,
     compress: true,
+    historyApiFallback: true,
   },
 };
