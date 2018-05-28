@@ -1,5 +1,10 @@
 # mApp
 
+[![Build Status](https://travis-ci.org/caesai/mApp.svg?branch=master)](https://travis-ci.org/caesai/mApp)
+
+[Working Example](https://mining-889ab.firebaseapp.com/)
+
+
 # Development stages and roadmap
 
 Project consists of three main steps:
@@ -29,8 +34,18 @@ Website and native app for mobile devices
 - Sign up / sign in logic and basic authorization (@midan888)
 - Profile page with creating private key and wallet
 We will use hierarchical deterministic flow to make wallet. [Some info about HD Wallets](https://bits.media/hd-wallet/). We need to use Bitcoin Improvement Protocol [BitcoinJs Lib](https://github.com/bitcoinjs/bitcoinjs-lib), [BIP32](https://github.com/bitcoinjs/bip32-utils), [BIP39](https://github.com/bitcoinjs/bip39), [BIP44](https://github.com/bitcoinjs/bip44-constants).(@midan888)
-Also [info about creating bitcoin address](http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript)
-[Way to make address](https://github.com/bitcoinjs/bitcoinjs-lib/issues/997)
+
+[Also info about creating bitcoin address](http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript)
+
+[Yet another way to make address](https://github.com/bitcoinjs/bitcoinjs-lib/issues/997)
+
+[Some info to make ether address](https://ethereum.stackexchange.com/questions/39384/how-to-generate-private-key-public-key-and-address)
+
+[Also sources to investigate how to make monero address](https://moneroaddress.org/)
+
+[Base58 encoding scheme](https://monerodocs.org/cryptography/base58/)
+
+[Reddit about monero addresses](https://www.reddit.com/r/Monero/comments/70kpg7/writing_a_js_miner_client_where_to_start/)
 - Prepare module for hashing functions
 - Research on Algorand, Monero and Zcash mining and consensus. WebAssembly + rust setup. (@ilerik)
 

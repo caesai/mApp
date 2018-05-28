@@ -15,5 +15,8 @@
   },
   "rules": {
     "react/prop-types": "off"
+  },
+  "settings": {
+    "import/resolver": "webpack"
   }
 }
