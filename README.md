@@ -30,6 +30,7 @@ Website and native app for mobile devices
 - Profile page with creating private key and wallet
 We will use hierarchical deterministic flow to make wallet. [Some info about HD Wallets](https://bits.media/hd-wallet/). We need to use Bitcoin Improvement Protocol [BitcoinJs Lib](https://github.com/bitcoinjs/bitcoinjs-lib), [BIP32](https://github.com/bitcoinjs/bip32-utils), [BIP39](https://github.com/bitcoinjs/bip39), [BIP44](https://github.com/bitcoinjs/bip44-constants).(@midan888)
 Also [info about creating bitcoin address](http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript)
+[Way to make address](https://github.com/bitcoinjs/bitcoinjs-lib/issues/997)
 - Prepare module for hashing functions
 - Research on Algorand, Monero and Zcash mining and consensus. WebAssembly + rust setup. (@ilerik)
 
