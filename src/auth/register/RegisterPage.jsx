@@ -4,7 +4,7 @@ import Typography from 'core/components/Typography';
 import Form from 'core/components/Form';
 import Field from 'core/components/Field';
 import { generateMnemonic } from 'core/crypto/utils';
-import { registerUser } from 'core/api';
+import connectStore from './connectStore';
 
 class RegisterPage extends Component {
   state = {
@@ -27,8 +27,7 @@ class RegisterPage extends Component {
       password: data.password,
     };
 
-    await registerUser(user);
-
+    await this.props.requestRegisterUser(user);
     this.props.history.push('/profile');
   };
 
@@ -51,4 +50,4 @@ class RegisterPage extends Component {
   }
 }
 
-export default withRouter(RegisterPage);
+export default withRouter(connectStore(RegisterPage));

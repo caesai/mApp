@@ -1,23 +1,13 @@
 import React, { Component } from 'react';
-import { getProfile } from 'core/api';
+import connectStore from './connectStore';
 
-class Profile extends Component {
-  state = {
-    user: null,
-  };
-
+class ProfilePage extends Component {
   componentWillMount() {
-    this.loadUser();
-  }
-
-  async loadUser() {
-    const user = await getProfile();
-
-    this.setState({ user });
+    this.props.requestGetProfile();
   }
 
   render() {
-    const { user } = this.state;
+    const { user } = this.props;
 
     if (!user) {
       return null;
@@ -39,5 +29,4 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
-
+export default connectStore(ProfilePage);

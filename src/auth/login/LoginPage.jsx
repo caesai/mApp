@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+
 import Typography from 'core/components/Typography';
 import Form from 'core/components/Form';
 import Field from 'core/components/Field';
-import { login } from 'core/api';
+import connectStore from './connectStore';
 
 class LoginPage extends Component {
   handleSubmit = async () => {
-    await login();
-
+    await this.props.requestLogin();
     this.props.history.push('/profile');
   };
 
@@ -25,4 +25,4 @@ class LoginPage extends Component {
   }
 }
 
-export default withRouter(LoginPage);
+export default withRouter(connectStore(LoginPage));

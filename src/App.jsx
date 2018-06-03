@@ -1,10 +1,11 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import withStyles from '@material-ui/core/styles/withStyles';
-import RegisterPage from './auth/RegisterPage';
-import LoginPage from './auth/LoginPage';
+
+import RegisterPage from './auth/register/RegisterPage';
+import LoginPage from './auth/login/LoginPage';
 import AuthPage from './auth/AuthPage';
-import Profile from './auth/Profile';
+import ProfilePage from './auth/profile/ProfilePage';
 import Header from './core/components/Header';
 
 const styles = () => ({
@@ -26,17 +27,15 @@ const styles = () => ({
 });
 
 const App = ({ classes }) => (
-  <BrowserRouter>
-    <div className={classes.root}>
-      <Header />
-      <div className={classes.content}>
-        <Route exact path="/" component={AuthPage} />
-        <Route path="/register" component={RegisterPage} />
-        <Route path="/login" component={LoginPage} />
-        <Route path="/profile" component={Profile} />
-      </div>
+  <div className={classes.root}>
+    <Header />
+    <div className={classes.content}>
+      <Route exact path="/" component={AuthPage} />
+      <Route path="/register" component={RegisterPage} />
+      <Route path="/login" component={LoginPage} />
+      <Route path="/profile" component={ProfilePage} />
     </div>
-  </BrowserRouter>
+  </div>
 );
 
 export default withStyles(styles)(App);
