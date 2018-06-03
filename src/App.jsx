@@ -20,6 +20,7 @@ const styles = () => ({
   },
   '@global': {
     a: {
+      color: 'black',
       textDecoration: 'none',
     },
     body: {

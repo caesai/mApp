@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
+import compose from 'recompose/compose';
+import withStyles from '@material-ui/core/styles/withStyles';
 
 import Typography from 'core/components/Typography';
 import Form from 'core/components/Form';
 import Field from 'core/components/Field';
-import connectStore from './connectStore';
+import TextLink from 'core/components/TextLink';
+import { connectLogin } from './connectStore';
+
+const styles = () => ({
+  root: {
+    margin: '64px auto',
+    maxWidth: 320,
+  },
+});
 
 class LoginPage extends Component {
   handleSubmit = async () => {
@@ -13,16 +23,25 @@ class LoginPage extends Component {
   };
 
   render() {
+    const { classes } = this.props;
+
     return (
-      <div>
+      <div className={classes.root}>
         <Typography variant="headline">Login</Typography>
         <Form onSubmit={this.handleSubmit} buttonLabel="Login">
           <Field name="email" rule="email" />
           <Field name="password" />
         </Form>
+        <TextLink to="/register">Зарегестрируйтесь</TextLink>
       </div>
     );
   }
 }
 
-export default withRouter(connectStore(LoginPage));
+const applyDecorators = compose(
+  withRouter,
+  connectLogin(),
+  withStyles(styles),
+);
+
+export default applyDecorators(LoginPage);

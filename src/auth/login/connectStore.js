@@ -1,12 +1,16 @@
 import { connect } from 'react-redux';
 import { requestLogin } from './actions';
 
-const mapDispatch = {
-  requestLogin,
+export const connectLogin = () => {
+  const mapDispatch = {
+    requestLogin,
+  };
+
+  const mapState = ({ auth }) => ({
+    user: auth.user,
+  });
+
+  return connect(mapState, mapDispatch);
 };
 
-const mapState = ({ auth }) => ({
-  user: auth.user,
-});
-
-export default connect(mapState, mapDispatch);
+export default {};

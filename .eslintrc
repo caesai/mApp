@@ -14,7 +14,8 @@
     "CoinHive": true
   },
   "rules": {
-    "react/prop-types": "off"
+    "react/prop-types": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   },
   "settings": {
     "import/resolver": "webpack"
