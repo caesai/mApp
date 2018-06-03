@@ -1,8 +1,8 @@
 import React from 'react';
-import Link from 'react-router-dom/Link';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Button from 'core/components/Button';
 import Typography from 'core/components/Typography';
+import Link from 'core/components/Link';
 
 const styles = () => ({
   controls: {
