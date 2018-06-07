@@ -11,7 +11,7 @@ import { connectLogin } from './connectStore';
 
 const styles = () => ({
   root: {
-    margin: '64px auto',
+    margin: '0 auto',
     maxWidth: 320,
   },
 });

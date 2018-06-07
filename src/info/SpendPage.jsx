@@ -4,7 +4,10 @@ import withContent from 'core/staticContent/withContent';
 
 const SpendPage = ({ i18n }) => (
   <div>
+    <Typography variant="title" align="center">{i18n('spend.body.title')}</Typography>
+    <br />
     <Typography>{i18n('spend.body.first')}</Typography>
+    <br />
     <Typography>{i18n('spend.body.second')}</Typography>
   </div>
 );

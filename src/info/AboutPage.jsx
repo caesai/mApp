@@ -4,7 +4,10 @@ import withContent from 'core/staticContent/withContent';
 
 const AboutPage = ({ i18n }) => (
   <div>
+    <Typography align="center" variant="title">{i18n('about.body.title')}</Typography>
+    <br />
     <Typography>{i18n('about.body.first')}</Typography>
+    <br />
     <Typography>{i18n('about.body.second')}</Typography>
   </div>
 );

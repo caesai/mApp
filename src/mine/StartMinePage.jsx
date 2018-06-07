@@ -5,6 +5,7 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import withContent from 'core/staticContent/withContent';
 import Button from 'core/components/Button';
 import Link from 'core/components/Link';
+import Typography from 'core/components/Typography';
 
 const styles = () => ({
   root: {
@@ -17,13 +18,14 @@ const styles = () => ({
 
 const StartMinePage = ({ classes, i18n }) => (
   <div className={classes.root}>
-    <Link to="/" href="/">
+    <Typography variant="title">{i18n('mine.start_mine_title')}</Typography>
+    <Link to="/mine-status">
       <Button
         className={classes.button}
         variant="raised"
         color="primary"
       >
-        {i18n('mine.stat_mine')}
+        {i18n('mine.start_mine_button')}
       </Button>
     </Link>
   </div>

@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
+import compose from 'recompose/compose';
+import withStyles from '@material-ui/core/styles/withStyles';
+
+import Typography from 'core/components/Typography';
 import connectStore from './connectStore';
+
+const styles = () => ({
+  wallets: {
+    display: 'flex',
+  },
+});
 
 class ProfilePage extends Component {
   componentWillMount() {
@@ -7,7 +17,7 @@ class ProfilePage extends Component {
   }
 
   render() {
-    const { user } = this.props;
+    const { user, classes } = this.props;
 
     if (!user) {
       return null;
@@ -15,18 +25,29 @@ class ProfilePage extends Component {
 
     return (
       <div>
-        <div>Name: {user.name}</div>
-        <div>Email: {user.email}</div>
-        <ul>
+        <Typography>Name: {user.name}</Typography>
+        <Typography>Email: {user.email}</Typography>
+        <div className={classes.wallets}>
           {
             user.addresses.map(address => (
-              <li key={address.type}>{address.type}: {address.value}</li>
+              <Typography
+                variant="title"
+                align="center"
+                key={address.type}
+              >
+                {address.type}: {address.value}
+              </Typography>
             ))
           }
-        </ul>
+        </div>
       </div>
     );
   }
 }
 
-export default connectStore(ProfilePage);
+const applyDecorators = compose(
+  connectStore,
+  withStyles(styles),
+);
+
+export default applyDecorators(ProfilePage);

@@ -32,21 +32,21 @@ const Header = ({ classes, i18n }) => (
         </Typography>
       </Link>
       <MenuList className={classes.navMenu}>
-        <MenuItem>
-          <Link to="/about">
+        <Link to="/about">
+          <MenuItem>
             {i18n('navMenu.about')}
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/how-it-works">
+          </MenuItem>
+        </Link>
+        <Link to="/how-it-works">
+          <MenuItem>
             {i18n('navMenu.works')}
-          </Link>
-        </MenuItem>
-        <MenuItem>
-          <Link to="/how-to-spend">
+          </MenuItem>
+        </Link>
+        <Link to="/how-to-spend">
+          <MenuItem>
             {i18n('navMenu.spend')}
-          </Link>
-        </MenuItem>
+          </MenuItem>
+        </Link>
       </MenuList>
       <div className={classes.loginLink}>
         <HeaderLink />
