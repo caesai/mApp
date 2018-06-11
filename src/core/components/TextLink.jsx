@@ -10,9 +10,14 @@ const styles = () => ({
   },
 });
 
-const Link = ({ to, children, classes }) => (
+const Link = ({
+  to,
+  children,
+  classes,
+  className,
+}) => (
   <LinkVendor to={to} href={to}>
-    <Typography className={classes.text}>{children}</Typography>
+    <Typography className={`${classes.text} ${className}`}>{children}</Typography>
   </LinkVendor>
 );
 

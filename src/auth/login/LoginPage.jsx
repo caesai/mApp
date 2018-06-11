@@ -14,6 +14,9 @@ const styles = () => ({
     margin: '0 auto',
     maxWidth: 320,
   },
+  textLink: {
+    display: 'block',
+  },
 });
 
 class LoginPage extends Component {
@@ -32,7 +35,18 @@ class LoginPage extends Component {
           <Field name="email" rule="email" />
           <Field name="password" />
         </Form>
-        <TextLink to="/register">Зарегестрируйтесь</TextLink>
+        <TextLink
+          className={classes.textLink}
+          to="/reset-password"
+        >
+          Reset password
+        </TextLink>
+        <TextLink
+          className={classes.textLink}
+          to="/register"
+        >
+          Зарегестрируйтесь
+        </TextLink>
       </div>
     );
   }

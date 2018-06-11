@@ -12,6 +12,7 @@ import WorksPage from './info/WorksPage';
 import SpendPage from './info/SpendPage';
 import StatMinePage from './mine/StartMinePage';
 import MineStatus from './mine/MineStatus';
+import ResetPasswordPage from './auth/resetPassword/ResetPasswordPage';
 
 const styles = () => ({
   root: {
@@ -41,6 +42,7 @@ const App = ({ classes }) => (
       <Route path="/register" component={RegisterPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/profile" component={ProfilePage} />
+      <Route path="/reset-password" component={ResetPasswordPage} />
       <Route path="/about" component={AboutPage} />
       <Route path="/how-it-works" component={WorksPage} />
       <Route path="/how-to-spend" component={SpendPage} />

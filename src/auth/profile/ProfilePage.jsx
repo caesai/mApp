@@ -7,7 +7,7 @@ import connectStore from './connectStore';
 
 const styles = () => ({
   wallets: {
-    display: 'flex',
+    wordRap: 'break-word',
   },
 });
 
@@ -27,12 +27,12 @@ class ProfilePage extends Component {
       <div>
         <Typography>Name: {user.name}</Typography>
         <Typography>Email: {user.email}</Typography>
+        <br />
+        <Typography variant="title">Wallets</Typography>
         <div className={classes.wallets}>
           {
             user.addresses.map(address => (
               <Typography
-                variant="title"
-                align="center"
                 key={address.type}
               >
                 {address.type}: {address.value}

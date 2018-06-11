@@ -39,27 +39,41 @@ class Form extends Component {
     this.setState({ data });
   };
 
-  render() {
-    const { children, buttonLabel } = this.props;
+  convertField(field) {
     const { data } = this.state;
+    const { props: { name, label, rule } } = field;
+    const value = data[name];
+
+    return field.type({
+      name,
+      label,
+      value,
+      key: name,
+      error: validateField(name, value, rule),
+      onChange: this.handleFieldChange,
+    });
+  }
+
+  renderFields() {
+    const { children } = this.props;
+
+    if (Array.isArray(children)) {
+      return children.map(field => this.convertField(field));
+    }
+
+    return this.convertField(children);
+  }
+
+  render() {
+    const { buttonLabel } = this.props;
 
     return (
       <div>
         {
-          children.map((field) => {
-            const { props: { name, label, rule } } = field;
-            const value = data[name];
-
-            return field.type({
-              name,
-              label,
-              value,
-              key: name,
-              error: validateField(name, value, rule),
-              onChange: this.handleFieldChange,
-            });
-          })
+          this.renderFields()
         }
+        <br />
+        <br />
         <Button
           variant="raised"
           color="primary"

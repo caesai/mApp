@@ -1,10 +1,11 @@
+import { createBitcoinAddress, createEthAddress } from 'core/crypto/utils';
 
 const fakeUser = {
   name: 'John Smith',
   email: 'johnsmith@google.com',
   addresses: [
-    { type: 'btc', value: 'adsajdnjrjnr' },
-    { type: 'eth', value: 'adasdadada' },
+    { type: 'btc', value: createBitcoinAddress() },
+    { type: 'eth', value: createEthAddress() },
     { type: 'xmr', value: 'asdadssaaa' },
   ],
 };
