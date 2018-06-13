@@ -51,9 +51,35 @@ We will use hierarchical deterministic flow to make wallet. [Some info about HD 
 
 ### Sprint.2
 
+- Creating ECDSA keys for authorization and signing up
+
+First of all we need to use [crypto module from NodeJs](https://nodejs.org/api/crypto.html).
+Then [secp256k1 library](https://www.npmjs.com/package/secp256k1) for generating private and public keys.
+After installing all needed libraries we should create BTC and ETH addresses to our wallets.
+[The whole implementation lays here](https://github.com/caesai/WebApp/blob/mnemonic/src/components/Key.js)
+
+- Authorization and sign up
+
+The main idea of authorization and sign up is to use public key which we created in previous step and send it to our Rust server with username and signature which will be verified on server side.
+
+For signing our public key we can use [this implementation](https://github.com/cryptocoinjs/secp256k1-node/blob/master/API.md#signbuffer-message-buffer-privatekey--object-options---signature-buffer-recovery-number)
+
+We send to server username, public key and signature in respond we will receive access token. Access token and keys should be kept in localstorage or some storage on client side, which we can retrieve in case user forgot his login key or some other important data by restoring private and other keys with mnemonic passphrase.
+
+So we have client with libraries and functions to create private and public keys, we use these keys to create Bitcoin and Ethereum wallets, we send public key and username to our server to verify user, receive access token and let our user to manage app.
+
 - Staging environment setup (docker-machine, ethereum testnet)
+
+When keys and addresses ready we start testnet and create some users to test Wallets.
+
 - Continuous integration and continuous delivery (CI/CD)
+
+We make a new server which will keep our frontend appliction so we can start alpha testing.
+
 - Adding WebAssembly module to an app
+
+After we deploy frontend application we can add webassembly module which will be consist of hashing functions for creating keys and verifying user, also for mining.
+
 - First pool implementation which serves as a proxy between the system and external pools (@ilerik)
 
 ### Sprint.3
