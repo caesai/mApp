@@ -7,6 +7,8 @@ import withContent from 'core/staticContent/withContent';
 import Button from 'core/components/Button';
 import Link from 'core/components/Link';
 
+import CashOutForm from './CashOutForm/CashOutForm';
+
 const styles = () => ({
   balance: {
     display: 'flex',
@@ -43,10 +45,23 @@ const statuses = [
 ];
 
 class MineStatus extends Component {
+  state = {
+    formShow: false,
+  };
+
   someRef = React.createRef();
+
+  showCashOutDialog = () => {
+    this.setState({ formShow: true });
+  };
+
+  closeForm = () => {
+    this.setState({ formShow: false });
+  };
 
   render() {
     const { classes, i18n } = this.props;
+    const { formShow } = this.state;
 
     return (
       <div className={classes.root}>
@@ -68,6 +83,7 @@ class MineStatus extends Component {
                 <Typography>Balance: {balance}</Typography>
                 <Typography>Price: {price}</Typography>
                 <Typography>Speed: {speed}/день</Typography>
+                <Button onClick={this.showCashOutDialog}>Cash out</Button>
               </div>
             ))
           }
@@ -82,6 +98,7 @@ class MineStatus extends Component {
         <Typography align="center">
           {i18n('mine.status.login_desc')}
         </Typography>
+        <CashOutForm open={formShow} onClose={this.closeForm} onSubmit={this.closeForm} />
       </div>
     );
   }

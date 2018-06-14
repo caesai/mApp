@@ -37,17 +37,29 @@ class Form extends Component {
     data[target.name] = target.value;
 
     this.setState({ data });
+
+    if (this.props.onChange) {
+      this.props.onChange(data);
+    }
   };
 
   convertField(field) {
     const { data } = this.state;
-    const { props: { name, label, rule } } = field;
+    const {
+      name,
+      label,
+      rule,
+      rows,
+      multiline,
+    } = field.props;
     const value = data[name];
 
     return field.type({
+      rows,
       name,
       label,
       value,
+      multiline,
       key: name,
       error: validateField(name, value, rule),
       onChange: this.handleFieldChange,
@@ -64,23 +76,31 @@ class Form extends Component {
     return this.convertField(children);
   }
 
-  render() {
-    const { buttonLabel } = this.props;
+  renderButton() {
+    const { buttonLabel, noButton } = this.props;
+
+    if (noButton) {
+      return null;
+    }
 
     return (
+      <Button
+        variant="raised"
+        color="primary"
+        onClick={this.handleSubmit}
+      >
+        {buttonLabel || 'Submit'}
+      </Button>
+    );
+  }
+
+  render() {
+    return (
       <div>
-        {
-          this.renderFields()
-        }
+        { this.renderFields() }
         <br />
         <br />
-        <Button
-          variant="raised"
-          color="primary"
-          onClick={this.handleSubmit}
-        >
-          {buttonLabel || 'Submit'}
-        </Button>
+        { this.renderButton() }
       </div>
     );
   }

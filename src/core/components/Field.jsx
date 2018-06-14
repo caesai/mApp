@@ -12,10 +12,18 @@ const Field = ({
   value,
   onChange,
   error,
+  rows,
+  multiline,
 }) => (
   <FormControl error={Boolean(error)} fullWidth key={name}>
     <InputLabel>{label || capitalize(name)}</InputLabel>
-    <Input value={value || ''} onChange={onChange} name={name} />
+    <Input
+      value={value || ''}
+      onChange={onChange}
+      name={name}
+      multiline={multiline}
+      rows={rows}
+    />
     <FormHelperText>{error}</FormHelperText>
   </FormControl>
 );

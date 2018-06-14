@@ -15,3 +15,5 @@ export const registerUser = user => Promise.resolve(user);
 export const login = user => Promise.resolve(user);
 
 export const getProfile = () => Promise.resolve(fakeUser);
+
+export const cashOut = data => Promise.resolve(data);

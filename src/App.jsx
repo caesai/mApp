@@ -10,6 +10,7 @@ import Footer from './core/components/Footer';
 import AboutPage from './info/AboutPage';
 import WorksPage from './info/WorksPage';
 import SpendPage from './info/SpendPage';
+import FeedbackPage from './info/FeedbackPage';
 import StatMinePage from './mine/StartMinePage';
 import MineStatus from './mine/MineStatus';
 import ResetPasswordPage from './auth/resetPassword/ResetPasswordPage';
@@ -47,6 +48,7 @@ const App = ({ classes }) => (
       <Route path="/how-it-works" component={WorksPage} />
       <Route path="/how-to-spend" component={SpendPage} />
       <Route path="/mine-status" component={MineStatus} />
+      <Route path="/feedback" component={FeedbackPage} />
     </div>
     <Footer />
   </div>
