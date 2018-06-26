@@ -1,7 +1,14 @@
-import { AUTH_USER_SET } from './constants';
+import { AUTH_USER_SET, AUTH_CREDENTIALS_SET } from './constants';
 
 const INITIAL_STATE = {
   user: null,
+  credentials: {
+    mnemonic: '',
+    publicKey: '',
+    privateKey: '',
+    ethAddress: '',
+    btcAddress: '',
+  },
 };
 
 const reducer = (state = INITIAL_STATE, { type, payload }) => {
@@ -10,6 +17,12 @@ const reducer = (state = INITIAL_STATE, { type, payload }) => {
       return {
         ...state,
         user: payload,
+      };
+    }
+    case AUTH_CREDENTIALS_SET: {
+      return {
+        ...state,
+        credentials: payload,
       };
     }
     default:

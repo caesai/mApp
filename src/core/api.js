@@ -1,18 +1,23 @@
-import { createBitcoinAddress, createEthAddress } from 'core/crypto/utils';
+
+const makeRequest = (path, data) => (
+  fetch(`http://localhost:3000/${path}`, {
+    method: 'POST',
+    body: JSON.stringify(data),
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+);
 
 const fakeUser = {
   name: 'John Smith',
   email: 'johnsmith@google.com',
-  addresses: [
-    { type: 'btc', value: createBitcoinAddress() },
-    { type: 'eth', value: createEthAddress() },
-    { type: 'xmr', value: 'asdadssaaa' },
-  ],
+  addresses: [],
 };
 
-export const registerUser = user => Promise.resolve(user);
+export const registerUser = data => makeRequest('signup', data);
 
-export const login = user => Promise.resolve(user);
+export const login = data => makeRequest('signin', data);
 
 export const getProfile = () => Promise.resolve(fakeUser);
 

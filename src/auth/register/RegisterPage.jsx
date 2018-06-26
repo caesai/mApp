@@ -6,7 +6,6 @@ import withStyles from '@material-ui/core/styles/withStyles';
 import Typography from 'core/components/Typography';
 import Form from 'core/components/Form';
 import Field from 'core/components/Field';
-import { generateMnemonic } from 'core/crypto/utils';
 import connectStore from './connectStore';
 
 const styles = () => ({
@@ -17,35 +16,20 @@ const styles = () => ({
 });
 
 class RegisterPage extends Component {
-  state = {
-    mnemonic: '',
-  };
-
   componentWillMount() {
-    this.setState({ mnemonic: generateMnemonic() });
+    const { generateCredentials } = this.props;
+
+    generateCredentials();
   }
 
   handleSubmit = async (data) => {
-    const {
-      mnemonic,
-    } = this.state;
+    await this.props.requestRegisterUser(data.password);
 
-    const user = {
-      mnemonic,
-      name: data.name,
-      email: data.email,
-      password: data.password,
-    };
-
-    await this.props.requestRegisterUser(user);
     this.props.history.push('/profile');
   };
 
   render() {
-    const {
-      mnemonic,
-    } = this.state;
-    const { classes } = this.props;
+    const { classes, mnemonic } = this.props;
 
     return (
       <div className={classes.root}>

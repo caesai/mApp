@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
-import { requestRegisterUser } from './actions';
+import { requestRegisterUser, generateCredentials } from './actions';
 
 const mapDispatch = {
   requestRegisterUser,
+  generateCredentials,
 };
 
-const mapState = () => ({
-
+const mapState = ({ auth }) => ({
+  mnemonic: auth.credentials.mnemonic,
 });
 
 export default connect(mapState, mapDispatch);

@@ -13,7 +13,6 @@ const styles = () => ({
   },
   formWrap: {
     width: 320,
-    margin: '0 auto',
   },
 });
 
@@ -31,26 +30,18 @@ class ProfilePage extends Component {
 
     return (
       <div>
-        <Typography>Name: {user.name}</Typography>
-        <Typography>Email: {user.email}</Typography>
-        <br />
-        <Typography variant="title">Wallets</Typography>
-        <div className={classes.wallets}>
-          {
-            user.addresses.map(address => (
-              <Typography
-                key={address.type}
-              >
-                {address.type}: {address.value}
-              </Typography>
-            ))
-          }
-        </div>
-        <br /><br />
+        <Typography variant="title">Name: {user.name}</Typography>
+        <Typography variant="title">Email: {user.email}</Typography>
+        <hr />
         <div className={classes.formWrap}>
-          <Typography variant="title">Edit profile</Typography>
+          <Typography variant="title">Edit email</Typography>
           <Form>
             <Field name="email" />
+            <Field name="confirmEmail" label="Confirm email" />
+          </Form>
+          <br />
+          <Typography variant="title">Edit password</Typography>
+          <Form>
             <Field name="password" />
             <Field name="confirmPassword" label="Confirm password" />
           </Form>
