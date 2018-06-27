@@ -42,6 +42,10 @@ module.exports = {
     ],
   },
 
+  optimization: {
+    minimize: false,
+  },
+
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
