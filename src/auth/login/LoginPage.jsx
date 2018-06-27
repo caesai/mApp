@@ -20,8 +20,8 @@ const styles = () => ({
 });
 
 class LoginPage extends Component {
-  handleSubmit = async () => {
-    await this.props.requestLogin();
+  handleSubmit = async (data) => {
+    await this.props.requestLogin(data.password);
     this.props.history.push('/profile');
   };
 

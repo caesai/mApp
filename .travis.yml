@@ -1,11 +1,11 @@
 language: node_js
 node_js:
-- stable
+  - stable
 cache:
   directories:
   - node_modules
 script:
-- npm run build
+  - npm run build
 deploy:
   provider: firebase
   token:
@@ -15,3 +15,5 @@ deploy:
 env:
   global:
     secure: KfghvyZBRrJdOmhpMMH9WQBthAs+fj1FXuJ/670Y2rnqddKwlWEWrqnzXrmySar4UXmut6pchGytewhQhHG1WmXVLxbRY/k3e1vOVXMeNzjSPyLOIF32QYpdHSgOoPVhrhp09tp9Tt41Dhcll0vULS0z3sxyZY03sKV21OXT9eX5mzUPPCGm8TWci7ZpxlcraFJfRoOWmWiJxpWGbDgKu3rK4ZfWNGaQ0ZJK5vdS+ZsondmOtEfTtcDKzYIDZhNfk1cqLLLnBXTf43d0Ad5hlF8Xn116NPZhhrbLoUDIw1W80DEnpFPqnbze89D6ykK1gwgisyMlqJjYmcR+/yd3RPrgl4hQBOS7mD/fHZrT/6sOCdo1OT1iPlxuDz1Ydc6mQHyra7HgbhuQPJrtMvIPMIiJK1o1oc7L98l906qCVRkYecHNVdtqdwm5FPqZ+Tq2NCBUD0u0x6t0auiATX9uOj3eHkt/P+x7V9HmvxPZDThn1zeAF8EAIW0gkQoYEnH/E/5jTBxlj3maAPHn9OnQ5oY0yR1w17m+K8iOAcFx2MVplwUQfceArA7QAkfzrobRgl/5jeG2Gm/r9n8cxqCp7yTodi/sbdbXx1T9viO9zbISc+q+z0XsSKtGDP0NhSCypxMNCL87fXZKD0DRQczx0ld9erhIwVxm2y8alVk6mlE=
+before_instal:
+  - sudo apt-get update

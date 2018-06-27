@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import isEmail from 'validator/lib/isEmail';
 import isAlpha from 'validator/lib/isAlpha';
+import isEmpty from 'validator/lib/isEmpty';
 import Button from 'core/components/Button';
 
 const validateField = (name, value, rule) => {
@@ -13,6 +14,9 @@ const validateField = (name, value, rule) => {
       return isEmail(value) ? '' : 'Invalid email';
     case 'alpha': {
       return isAlpha(value) ? '' : 'Not valid name';
+    }
+    case 'required': {
+      return !isEmpty(value) ? '' : 'Required field';
     }
     default:
       return '';

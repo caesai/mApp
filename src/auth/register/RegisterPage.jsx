@@ -38,7 +38,7 @@ class RegisterPage extends Component {
         <Form onSubmit={this.handleSubmit} buttonLabel="Register">
           <Field name="name" rule="alpha" />
           <Field name="email" rule="email" />
-          <Field name="password" />
+          <Field name="password" rule="required" />
         </Form>
       </div>
     );

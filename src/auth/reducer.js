@@ -5,7 +5,7 @@ const INITIAL_STATE = {
   credentials: {
     mnemonic: '',
     publicKey: '',
-    privateKey: '',
+    privateKey: localStorage.getItem('key'),
     ethAddress: '',
     btcAddress: '',
   },
@@ -20,6 +20,7 @@ const reducer = (state = INITIAL_STATE, { type, payload }) => {
       };
     }
     case AUTH_CREDENTIALS_SET: {
+      localStorage.setItem('key', payload.privateKey);
       return {
         ...state,
         credentials: payload,

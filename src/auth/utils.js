@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import secp256k1 from 'secp256k1';
+import { Buffer } from 'safe-buffer';
 
 export const generatePrivateKey = () => (
   new Promise((resolve, reject) => {
@@ -14,4 +15,9 @@ export const generatePublicKey = privateKey => secp256k1.publicKeyCreate(private
 
 export const sign = (password, key) => secp256k1.sign(password, key);
 
-export const getCharCodes = str => str.split().map(strItem => strItem.charCodeAt());
+export const passwordToSignableBuffer = (password) => {
+  const letters = password.split().map(passwordItem => passwordItem.charCodeAt());
+  letters.length = 32;
+
+  return Buffer.from(letters);
+};

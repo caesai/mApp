@@ -4,7 +4,7 @@ import { registerUser } from 'core/api';
 import { setUser } from 'auth/actions';
 import { generateMnemonic, createAddress } from 'core/crypto/btc';
 import { createEthAddress } from 'core/crypto/eth';
-import { generatePrivateKey, generatePublicKey, sign, getCharCodes } from 'auth/utils';
+import { generatePrivateKey, generatePublicKey, sign, passwordToSignableBuffer } from 'auth/utils';
 import { AUTH_CREDENTIALS_SET } from 'auth/constants';
 
 export const generateCredentials = () => async (dispatch) => {
@@ -18,11 +18,11 @@ export const generateCredentials = () => async (dispatch) => {
   dispatch({
     type: AUTH_CREDENTIALS_SET,
     payload: {
-      publicKey,
-      privateKey,
       mnemonic,
-      ethAddress,
-      btcAddress,
+      publicKey: publicKey.toString('hex'),
+      privateKey: privateKey.toString('hex'),
+      ethAddress: ethAddress.toString('hex'),
+      btcAddress: btcAddress.toString('hex'),
     },
   });
 };
@@ -30,12 +30,9 @@ export const generateCredentials = () => async (dispatch) => {
 export const requestRegisterUser = password => async (dispatch, getState) => {
   const { publicKey, privateKey } = getState().auth.credentials;
 
-  const passwordInCodes = getCharCodes(password);
-  passwordInCodes.length = 32;
-
   const res = await registerUser({
-    uid: publicKey,
-    proof: sign(Buffer.from(passwordInCodes), privateKey),
+    uid: Buffer.from(publicKey, 'hex'),
+    proof: sign(passwordToSignableBuffer(password), Buffer.from(privateKey, 'hex')),
     credentials: jshashes.SHA256(password),
   });
 
