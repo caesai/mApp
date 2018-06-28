@@ -3,6 +3,8 @@ import bitcoin from 'bitcoinjs-lib';
 
 export const generateMnemonic = key => bip39.entropyToMnemonic(key);
 
+export const recoverPrivateKey = mnemonic => bip39.mnemonicToEntropy(mnemonic);
+
 export const mnemonicToSeedHex = mnemonic => bip39.mnemonicToSeedHex(mnemonic);
 
 export const createBitcoinAddress = () => mnemonicToSeedHex(generateMnemonic());

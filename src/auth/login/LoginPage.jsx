@@ -21,18 +21,24 @@ const styles = () => ({
 
 class LoginPage extends Component {
   handleSubmit = async (data) => {
-    await this.props.requestLogin(data.password);
-    this.props.history.push('/profile');
+    const { requestLogin, history } = this.props;
+
+    requestLogin(data);
+    history.push('/profile');
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, privateKey } = this.props;
 
     return (
       <div className={classes.root}>
         <Typography variant="headline">Login</Typography>
         <Form onSubmit={this.handleSubmit} buttonLabel="Login">
-          <Field name="email" rule="email" />
+          {
+            !privateKey && (
+              <Field name="mnemonic" rule="required" />
+            )
+          }
           <Field name="password" />
         </Form>
         <TextLink

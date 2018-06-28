@@ -8,6 +8,7 @@ export const connectLogin = () => {
 
   const mapState = ({ auth }) => ({
     user: auth.user,
+    privateKey: auth.credentials.privateKey,
   });
 
   return connect(mapState, mapDispatch);

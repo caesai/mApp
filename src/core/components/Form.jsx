@@ -48,6 +48,10 @@ class Form extends Component {
   };
 
   convertField(field) {
+    if (!field) {
+      return null;
+    }
+
     const { data } = this.state;
     const {
       name,

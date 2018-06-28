@@ -1,4 +1,8 @@
-import { AUTH_USER_SET, AUTH_CREDENTIALS_SET } from './constants';
+import {
+  AUTH_LOGOUT,
+  AUTH_USER_SET,
+  AUTH_CREDENTIALS_SET,
+} from './constants';
 
 const INITIAL_STATE = {
   user: null,
@@ -24,6 +28,13 @@ const reducer = (state = INITIAL_STATE, { type, payload }) => {
       return {
         ...state,
         credentials: payload,
+      };
+    }
+    case AUTH_LOGOUT: {
+      localStorage.removeItem('key');
+      return {
+        ...INITIAL_STATE,
+        privateKey: '',
       };
     }
     default:

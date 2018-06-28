@@ -3,6 +3,7 @@ import compose from 'recompose/compose';
 import withStyles from '@material-ui/core/styles/withStyles';
 import Form from 'core/components/Form';
 import Field from 'core/components/Field';
+import Button from 'core/components/Button';
 
 import Typography from 'core/components/Typography';
 import connectStore from './connectStore';
@@ -20,6 +21,10 @@ class ProfilePage extends Component {
   componentWillMount() {
     this.props.requestGetProfile();
   }
+
+  handleLogoutClick = () => {
+    this.props.logOut();
+  };
 
   render() {
     const { user, classes } = this.props;
@@ -46,6 +51,11 @@ class ProfilePage extends Component {
             <Field name="confirmPassword" label="Confirm password" />
           </Form>
         </div>
+        <hr />
+        <br />
+        <Typography variant="title">To logout and clear data click the button below</Typography>
+        <br />
+        <Button variant="raised" color="secondary" onClick={this.handleLogoutClick}>Log out</Button>
       </div>
     );
   }

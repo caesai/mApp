@@ -1,8 +1,11 @@
-import { AUTH_USER_SET } from 'auth/constants';
+import { AUTH_USER_SET, AUTH_LOGOUT } from 'auth/constants';
 
 export const setUser = user => ({
   type: AUTH_USER_SET,
   payload: user,
 });
 
-export default {};
+export const logOut = () => ({
+  type: AUTH_LOGOUT,
+});
+
