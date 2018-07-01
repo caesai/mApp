@@ -39,7 +39,7 @@ class LoginPage extends Component {
               <Field name="mnemonic" rule="required" />
             )
           }
-          <Field name="password" />
+          <Field name="password" rule="required" />
         </Form>
         <TextLink
           className={classes.textLink}

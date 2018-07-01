@@ -4,11 +4,7 @@ import isAlpha from 'validator/lib/isAlpha';
 import isEmpty from 'validator/lib/isEmpty';
 import Button from 'core/components/Button';
 
-const validateField = (name, value, rule) => {
-  if (value === undefined) {
-    return '';
-  }
-
+const validate = (name, value = '', rule) => {
   switch (rule) {
     case 'email':
       return isEmail(value) ? '' : 'Invalid email';
@@ -25,20 +21,63 @@ const validateField = (name, value, rule) => {
 
 class Form extends Component {
   state = {
-    data: {},
+    data: new Map(),
+    errors: new Map(),
+  };
+
+  getFields = () => {
+    const { children } = this.props;
+    if (Array.isArray(children)) {
+      return children.filter(child => child);
+    }
+
+    if (children) {
+      return [children];
+    }
+
+    return [];
+  };
+
+  validateField = (name) => {
+    const fields = this.getFields();
+    const field = fields.find(fieldsItem => fieldsItem.props.name === name);
+
+    const { rule } = field.props;
+    const value = this.state.data.get(name);
+
+    let error;
+    if (rule) {
+      error = validate(name, value, rule);
+    }
+
+    return error;
   };
 
   handleSubmit = () => {
-    this.props.onSubmit(this.state.data);
+    const { errors, data } = this.state;
+
+    const fields = this.getFields();
+    let hasError = false;
+    fields.forEach(({ props: { name } }) => {
+      const error = this.validateField(name);
+      if (error) {
+        hasError = true;
+      }
+      errors.set(name, error);
+    });
+
+    if (!hasError) {
+      this.props.onSubmit(data);
+    } else {
+      this.setState({ errors });
+    }
   };
 
   handleFieldChange = ({ target }) => {
-    const { data: datPrev } = this.state;
-    const data = {
-      ...datPrev,
-    };
+    const { data } = this.state;
+    const { name, value } = target;
 
-    data[target.name] = target.value;
+    data.set(name, value);
 
     this.setState({ data });
 
@@ -47,29 +86,40 @@ class Form extends Component {
     }
   };
 
+  handleFieldBlur = ({ target }) => {
+    const { errors } = this.state;
+    const { name } = target;
+    const error = this.validateField(name);
+
+    errors.set(name, error);
+
+    this.setState({ errors });
+  };
+
   convertField(field) {
     if (!field) {
       return null;
     }
 
-    const { data } = this.state;
+    const { data, errors } = this.state;
     const {
       name,
       label,
-      rule,
       rows,
       multiline,
     } = field.props;
-    const value = data[name];
+    const value = data.get(name);
+    const error = errors.get(name);
 
     return field.type({
       rows,
       name,
       label,
       value,
+      error,
       multiline,
       key: name,
-      error: validateField(name, value, rule),
+      onBlur: this.handleFieldBlur,
       onChange: this.handleFieldChange,
     });
   }

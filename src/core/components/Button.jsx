@@ -7,12 +7,14 @@ const Button = ({
   variant,
   children,
   className,
+  ...other
 }) => (
   <ButtonMui
     className={className}
     color={color}
     variant={variant}
     onClick={onClick}
+    {...other}
   >
     {children}
   </ButtonMui>

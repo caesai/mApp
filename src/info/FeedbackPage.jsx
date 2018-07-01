@@ -17,9 +17,9 @@ class FeedbackPage extends Component {
         <Typography variant="title">{i18n('feedback.title')}</Typography>
         <br />
         <Form onSubmit={this.handleSubmit}>
-          <Field name="email" />
-          <Field name="topic" />
-          <Field multiline name="text" rows={4} />
+          <Field name="email" rule="required" />
+          <Field name="topic" rule="required" />
+          <Field multiline name="text" rows={4} rule="required" />
         </Form>
       </div>
     );

@@ -14,10 +14,12 @@ const Field = ({
   error,
   rows,
   multiline,
+  onBlur,
 }) => (
   <FormControl error={Boolean(error)} fullWidth key={name}>
     <InputLabel>{label || capitalize(name)}</InputLabel>
     <Input
+      onBlur={onBlur}
       value={value || ''}
       onChange={onChange}
       name={name}

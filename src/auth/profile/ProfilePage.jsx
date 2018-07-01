@@ -41,14 +41,14 @@ class ProfilePage extends Component {
         <div className={classes.formWrap}>
           <Typography variant="title">Edit email</Typography>
           <Form>
-            <Field name="email" />
-            <Field name="confirmEmail" label="Confirm email" />
+            <Field name="email" rule="required" />
+            <Field name="confirmEmail" label="Confirm email" rule="required" />
           </Form>
           <br />
           <Typography variant="title">Edit password</Typography>
           <Form>
-            <Field name="password" />
-            <Field name="confirmPassword" label="Confirm password" />
+            <Field name="password" rule="required" />
+            <Field name="confirmPassword" label="Confirm password" rule="required" />
           </Form>
         </div>
         <hr />

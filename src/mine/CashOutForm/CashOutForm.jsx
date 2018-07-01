@@ -31,7 +31,7 @@ class CashOutForm extends Component {
         <DialogTitle>Cash out</DialogTitle>
         <DialogContent>
           <Form noButton onChange={this.handleChange}>
-            <Field name="address" />
+            <Field name="address" rule="required" />
           </Form>
           <DialogActions>
             <Button onClick={onClose}>Cancel</Button>
