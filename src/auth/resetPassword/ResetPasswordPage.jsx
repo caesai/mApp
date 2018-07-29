@@ -26,7 +26,7 @@ class ResetPasswordPage extends Component {
       <div className={classes.root}>
         <Typography variant="title" align="center">{i18n('resetPassword.title')}</Typography>
         <Form onSubmit={this.handleSubmit}>
-          <Field name="email" rule="email" />
+          <Field name="mnemonic" rule="alpha" />
         </Form>
       </div>
     );

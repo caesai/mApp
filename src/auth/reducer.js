@@ -9,7 +9,7 @@ const INITIAL_STATE = {
   credentials: {
     mnemonic: '',
     publicKey: '',
-    privateKey: localStorage.getItem('key'),
+    secretKey: localStorage.getItem('key'),
     ethAddress: '',
     btcAddress: '',
   },
