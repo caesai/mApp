@@ -1,23 +1,31 @@
 import React from 'react';
-import ButtonMui from '@material-ui/core/Button';
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = () => ({
+  root: {
+    width: 275,
+    height: 54,
+    borderRadius: '27px',
+    backgroundImage: 'linear-gradient(to left, #0053ff, #00b4ff)',
+    boxShadow: '0 8px 20px 0 rgba(70, 86, 132, 0.2), 0 15px 55px 0 rgba(157, 163, 180, 0.2)',
+    fontSize: '20px',
+    fontWeight: 'bold',
+    color: '#fff',
+  },
+});
 
 const Button = ({
-  color,
-  onClick,
-  variant,
+  classes,
   children,
+  onClick,
   className,
-  ...other
 }) => (
-  <ButtonMui
-    className={className}
-    color={color}
-    variant={variant}
+  <button
+    className={`${classes.root} ${className}`}
     onClick={onClick}
-    {...other}
   >
     {children}
-  </ButtonMui>
+  </button>
 );
 
-export default Button;
+export default withStyles(styles)(Button);

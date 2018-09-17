@@ -67,7 +67,11 @@ class Form extends Component {
     });
 
     if (!hasError) {
-      this.props.onSubmit(data);
+      const submitData = {};
+      data.forEach((value, key) => {
+        submitData[key] = value;
+      });
+      this.props.onSubmit(submitData);
     } else {
       this.setState({ errors });
     }

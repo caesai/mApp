@@ -39,6 +39,27 @@ module.exports = {
         use: 'babel-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.(jpg|png|svg)$/,
+        loader: 'url-loader',
+        options: {
+          name: '[name].[hash:8].[ext]',
+        },
+      },
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/',
+          },
+        }],
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
   },
 

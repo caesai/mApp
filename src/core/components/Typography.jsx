@@ -1,12 +1,35 @@
 import React from 'react';
-import TypographyMui from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
 
-const Typography = ({ children, ...other }) => (
-  <TypographyMui
-    {...other}
-  >
-    {children}
-  </TypographyMui>
-);
+const VARIANT_TITLE = 'title';
+const VARIANT_HEADLINE = 'headline';
 
-export default Typography;
+const selectTag = (variant) => {
+  switch (variant) {
+    case VARIANT_TITLE:
+      return 'h2';
+    case VARIANT_HEADLINE:
+      return 'h1';
+    default:
+      return 'p';
+  }
+};
+
+const styles = () => ({
+  root: {
+    fontFamily: 'Rubik, sans-serif',
+    fontWeight: '400',
+  },
+});
+
+const Typography = ({ children, variant, classes }) => {
+  const Component = selectTag(variant);
+
+  return (
+    <Component className={classes.root}>
+      {children}
+    </Component>
+  );
+};
+
+export default withStyles(styles)(Typography);

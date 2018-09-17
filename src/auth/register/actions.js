@@ -23,6 +23,7 @@ export const generateCredentials = () => async (dispatch) => {
       mnemonic,
       publicKey,
       privateKey,
+      secretKey,
       ethAddress: ethAddress.toString('hex'),
       btcAddress: btcAddress.toString('hex'),
     },

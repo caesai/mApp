@@ -23,7 +23,7 @@ class RegisterPage extends Component {
   }
 
   handleSubmit = async (data) => {
-    await this.props.requestRegisterUser(data.password);
+    await this.props.requestRegisterUser(data);
 
     this.props.history.push('/profile');
   };
@@ -37,8 +37,6 @@ class RegisterPage extends Component {
         <Typography>{mnemonic}</Typography>
         <Form onSubmit={this.handleSubmit} buttonLabel="Register">
           <Field name="name" rule="alpha" />
-          <Field name="email" rule="email" />
-          <Field name="password" rule="required" />
         </Form>
       </div>
     );
