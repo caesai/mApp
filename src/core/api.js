@@ -1,14 +1,11 @@
 import * as exonumClient from 'exonum-client';
 import { getCredentialFromStore } from 'auth/selectors';
+import axios from 'axios';
 
 const makeRequest = (path, data) => {
-  return fetch(`http://198.211.127.116:8200/api/services/simple_mining_pool/v1/${path}`, {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+  return axios.post('http://146.185.133.26:8200/api/services/simple_mining_pool/v1/transaction', {
+    body: data
+  }).then(resp => console.log(resp)).catch(err => console.log(err));
 };
 
 const fakeUser = {
@@ -23,7 +20,7 @@ export const registerUser = (data) => {
   const request = exonumClient.newMessage({
     protocol_version: 0,
     service_id: 128,
-    message_id: 3,
+    message_id: 2,
     fields: [
       { name: 'pub_key', type: exonumClient.PublicKey },
       { name: 'name', type: exonumClient.String },
@@ -31,6 +28,7 @@ export const registerUser = (data) => {
   });
 
   const { publicKey } = getCredentialFromStore();
+  console.log(publicKey, secretKey)
   const dataWithKey = {
     ...data,
     pub_key: publicKey,
@@ -38,7 +36,7 @@ export const registerUser = (data) => {
 
   const signature = request.sign(secretKey, dataWithKey);
 
-  return makeRequest('transaction', {
+  return makeRequest({
     protocol_version: 0,
     service_id: 128,
     message_id: 2,
