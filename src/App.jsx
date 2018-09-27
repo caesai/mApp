@@ -6,7 +6,6 @@ import RegisterPage from './auth/register/RegisterPage';
 import LoginPage from './auth/login/LoginPage';
 import ProfilePage from './auth/profile/ProfilePage';
 import Header from './core/components/Header/Header';
-import Footer from './core/components/Footer';
 import AboutPage from './info/AboutPage';
 import WorksPage from './info/WorksPage';
 import SpendPage from './info/SpendPage';

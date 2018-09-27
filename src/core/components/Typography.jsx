@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 const Paragraph = styled.p`
   font-family: Rubik, sans-serif;
-  margin: 0;
   text-align: ${props => props.align || 'left'};
+  font-weight: ${props => props.weight || 'normal'};
+  margin: ${props => props.margin || '0'}
 `;
 
 const Caption = styled(Paragraph)`
@@ -15,9 +16,8 @@ const Body = styled(Paragraph)`
   font-size: 16px;
 `;
 
-const Headline = styled.h1`
+const Headline = Paragraph.withComponent('h1').extend`
   font-size: 24px;
-  font-family: Rubik, sans-serif;
   font-weight: 500;
   line-height: 29px;
   text-align: ${props => props.align || 'center'};
@@ -48,11 +48,23 @@ const selectTag = (variant) => {
   }
 };
 
-const Typography = ({ children, variant, align }) => {
+const Typography = ({
+  children,
+  variant,
+  align,
+  weight,
+  className,
+  margin,
+}) => {
   const Component = selectTag(variant);
 
   return (
-    <Component align={align}>
+    <Component
+      align={align}
+      className={className}
+      weight={weight}
+      margin={margin}
+    >
       {children}
     </Component>
   );
