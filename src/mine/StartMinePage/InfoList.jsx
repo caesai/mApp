@@ -17,8 +17,7 @@ const TitleWrap = styled.div`
 `;
 
 const Root = styled.div`
-  height: 1318px;
-  padding-top: 200px;
+  padding: 24px 0;
   margin-top: 53px;
   background-color: #1d2249;
 `;

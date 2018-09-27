@@ -9,6 +9,8 @@ const Base = styled.button`
   font-size: 18px;
   font-weight: 500;
   border: none;
+  display: block;
+  margin: 0 auto;
 `;
 
 const Primary = styled(Base)`

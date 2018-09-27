@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { PrimaryButton, SimpleButton } from 'core/components/Button';
-import arrowRight from '../../core/components/Button/assets/arrow-right.svg';
+import { PrimaryButton } from 'core/components/Button/Button';
 
 export const Root = styled.div`
 `;
 
 export const Main = styled.div`
   flex: 1;
+  padding: 0 20px;
 `;
 
 export const VideoWrap = styled.div`
@@ -57,5 +57,20 @@ export const DeviceList = styled.div`
 `;
 
 export const HowImage = styled.img`
-  
+  display: block;
+  flex: 1;
+`;
+
+export const DevicesWrap = styled.div`
+  padding: 0 20px;
+`;
+
+export const HowWorks = styled.div`
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+`;
+
+export const HowWorksTexts = styled.div`
+  flex: 1;
 `;

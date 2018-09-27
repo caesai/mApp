@@ -1,44 +1,39 @@
 import React from 'react';
-import withStyles from '@material-ui/core/styles/withStyles';
-import compose from 'recompose/compose';
+import styled from 'styled-components';
 
 import logoIcon from './assets/logo.svg';
 import menuIcon from './assets/menu.svg';
 
-const styles = () => ({
-  root: {
-    display: 'flex',
-    justifyContent: 'flex-start',
-    flexFlow: 'row nowrap',
-    alignItems: 'center',
-  },
-  menu: {
-    display: 'block',
-    flex: '0 0 22px',
-    marginLeft: 'auto',
-  },
-  logo: {
-    height: 40,
-    display: 'block',
-    flex: '0 0 auto',
-  },
-});
+const Root = styled.header`
+    padding: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+    align-items: center;
+`;
 
-const Header = ({ classes, i18n }) => (
-  <header className={classes.root}>
-    <img className={classes.logo} src={logoIcon} alt="logo" />
-    <img
-      className={classes.menu}
+const Logo = styled.img`
+    height: 40px;
+    display: block;
+    flex: 0 0 auto;
+`;
+
+const Menu = styled.img`
+    display: block;
+    flex: 0 0 22px;
+    margin-left: auto;
+`;
+
+const Header = () => (
+  <Root>
+    <Logo src={logoIcon} alt="logo" />
+    <Menu
       src={menuIcon}
       alt="menu"
       width="22"
       height="16"
     />
-  </header>
+  </Root>
 );
 
-const applyDecorators = compose(
-  withStyles(styles),
-);
-
-export default applyDecorators(Header);
+export default Header;

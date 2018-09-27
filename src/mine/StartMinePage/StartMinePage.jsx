@@ -25,6 +25,9 @@ import {
   LeftShape,
   RightShape,
   HowImage,
+  DevicesWrap,
+  HowWorks,
+  HowWorksTexts,
 } from './styles';
 
 const StartMinePage = ({ i18n }) => (
@@ -57,54 +60,60 @@ const StartMinePage = ({ i18n }) => (
         </Video>
       </VideoWrap>
     </Main>
-    <Typography variant="headline">Майнинг в браузере на любом устройстве</Typography>
-    <Typography variant="body" margin="32px 0 0 0">
-      Больше не требуется покупать дорогостоящее оборудование и тратить свое время на настройку майнеров.
-    </Typography>
-    <Typography
-      variant="body"
-      align="center"
-      weight="600"
-      margin="32px 0 32px 0"
-    >
-      Доступно на всех устройствах:
-    </Typography>
-    <DeviceList>
-      <Device title="Компьютер" type="computer" />
-      <Device title="Телефон" type="phone" />
-      <Device title="Планшет" type="tablet" />
-      <Device title="Игровая приставка" type="console" />
-    </DeviceList>
-    <Typography
-      variant="body"
-      align="center"
-      weight="600"
-      margin="32px 0 32px 0"
-    >
-      Больше устройств - больше доход!
-    </Typography>
-    <MoreButton>
-      Подробнее
-    </MoreButton>
-    <Typography
-      variant="title"
-      align="center"
-      weight="600"
-      margin="32px 0 32px 0"
-    >
-      Как это работает
-    </Typography>
-    <Typography
-      variant="body"
-      align="center"
-      margin="32px 0 32px 0"
-    >
-      SimpleMining - это самый простой и доступный майнинг криптовалюты прямо в браузере! Вы получаете деньги только за то что открыли эту страницу! Без вложений, без приглашений, без просмотров рекламы и выполнения заданий. Просто оставьте открытой эту страницу в фоновой вкладке и занимайтесь своими делами, пока деньги будут поступать на Ваш счет.
-    </Typography>
-    <HowImage src={howSrc} />
-    <MoreButton>
-      Подробнее
-    </MoreButton>
+    <DevicesWrap>
+      <Typography variant="headline">Майнинг в браузере на любом устройстве</Typography>
+      <Typography variant="body" margin="32px 0 0 0">
+        Больше не требуется покупать дорогостоящее оборудование и тратить свое время на настройку майнеров.
+      </Typography>
+      <Typography
+        variant="body"
+        align="center"
+        weight="600"
+        margin="32px 0 32px 0"
+      >
+        Доступно на всех устройствах:
+      </Typography>
+      <DeviceList>
+        <Device title="Компьютер" type="computer" />
+        <Device title="Телефон" type="phone" />
+        <Device title="Планшет" type="tablet" />
+        <Device title="Игровая приставка" type="console" />
+      </DeviceList>
+      <Typography
+        variant="body"
+        align="center"
+        weight="600"
+        margin="32px 0 32px 0"
+      >
+        Больше устройств - больше доход!
+      </Typography>
+      <MoreButton>
+        Подробнее
+      </MoreButton>
+      <HowWorks>
+        <HowWorksTexts>
+          <Typography
+            variant="title"
+            align="center"
+            weight="600"
+            margin="32px 0 32px 0"
+          >
+            Как это работает
+          </Typography>
+          <Typography
+            variant="body"
+            align="center"
+            margin="32px 0 32px 0"
+          >
+            SimpleMining - это самый простой и доступный майнинг криптовалюты прямо в браузере! Вы получаете деньги только за то что открыли эту страницу! Без вложений, без приглашений, без просмотров рекламы и выполнения заданий. Просто оставьте открытой эту страницу в фоновой вкладке и занимайтесь своими делами, пока деньги будут поступать на Ваш счет.
+          </Typography>
+          <MoreButton>
+            Подробнее
+          </MoreButton>
+        </HowWorksTexts>
+        <HowImage src={howSrc} />
+      </HowWorks>
+    </DevicesWrap>
     <InfoList />
     <Blog />
     <StartMinButton

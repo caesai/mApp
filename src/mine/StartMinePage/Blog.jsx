@@ -7,7 +7,7 @@ import image3x from './assets/blog@3x.jpg';
 import { MoreButton } from '../../core/components/Button'
 
 const Root = styled.div`
-  padding: 0 20px;
+  padding: 24px 20px;
 `;
 
 const Image = styled.img`
@@ -23,11 +23,17 @@ const Caption = styled.div`
 const Date = styled(Typography)`
   color: #1d2249;
   opacity: 0.6;
+  margin-top: 24px;
+`;
+
+const MoreButtonStyled = styled(MoreButton)`
+  margin: 24px auto;
+  display: block;
 `;
 
 const Blog = () => (
   <Root>
-    <Typography variant="headline">Блог</Typography>
+    <Typography variant="headline" margin="0 0 24px 0">Блог</Typography>
     <Image
       alt="computer"
       src={image}
@@ -41,9 +47,9 @@ const Blog = () => (
         3 day ago
       </Date>
     </Caption>
-    <MoreButton>
+    <MoreButtonStyled>
       Читать блог
-    </MoreButton>
+    </MoreButtonStyled>
   </Root>
 );
 
