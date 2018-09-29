@@ -6,19 +6,17 @@ import RegisterPage from './auth/register/RegisterPage';
 import LoginPage from './auth/login/LoginPage';
 import ProfilePage from './auth/profile/ProfilePage';
 import Header from './core/components/Header/Header';
-import Footer from './core/components/Footer';
 import AboutPage from './info/AboutPage';
 import WorksPage from './info/WorksPage';
 import SpendPage from './info/SpendPage';
 import FeedbackPage from './info/FeedbackPage';
-import StatMinePage from './mine/StartMinePage/StartMinePage';
+import StartMinePage from './mine/StartMinePage/StartMinePage';
 import MineStatus from './mine/MineStatus';
 import ResetPasswordPage from './auth/resetPassword/ResetPasswordPage';
 import WalletsPage from './auth/wallet/WalletsPage';
 
 const styles = () => ({
   root: {
-    padding: 20,
     margin: '0 auto',
   },
   content: {
@@ -39,7 +37,7 @@ const App = ({ classes }) => (
   <div className={classes.root}>
     <Header />
     <div className={classes.content}>
-      <Route exact path="/" component={StatMinePage} />
+      <Route exact path="/" component={StartMinePage} />
       <Route path="/register" component={RegisterPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/profile" component={ProfilePage} />
