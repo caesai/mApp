@@ -126,3 +126,4 @@ const StartMinePage = ({ i18n }) => (
 );
 
 export default withContent(StartMinePage);
+//
