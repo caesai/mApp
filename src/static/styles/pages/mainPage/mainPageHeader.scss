@@ -1,0 +1,85 @@
+.mainPageHeader{
+    @include image-set("/static/images/mainPageHeader_background", "png");
+    background-position: top right;
+    background-repeat: no-repeat;
+    height: 686px;
+    padding-top: 84px;
+
+    @media only screen and (max-width: 1300px){
+        padding-top: 57px;
+        height: 693px;
+
+        @include image-set("/static/images/mainPageHeader_background_tablet", "png");
+    }
+
+    @media only screen and (max-width: 700px){
+        background-position: top right -50px;
+    }
+
+    @media only screen and (max-width: 650px){
+        background-position: top right -100px;
+    }
+
+    @media only screen and (max-width: 600px){
+        background-position: top right -150px;
+    }
+
+    @media only screen and (max-width: 550px){
+        background-position: top right -200px;
+    }
+
+    @media only screen and (max-width: 500px){
+        height: auto;
+        background-position: center 131px;
+        @include image-set("/static/images/mainPageHeader_background_phone", "png");
+    }
+
+    &-top,
+    &-about{
+        padding-left: 130px;
+        padding-right: 130px;
+
+        @media only screen and (max-width: 1300px){
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+
+    &-top{
+        padding-top: 41px;
+
+        @media only screen and (max-width: 1300px){
+            padding-top: 17px;
+        }
+
+        @media only screen and (max-width: 500px){
+            padding-left: 19px;
+            padding-right: 22px;
+        }
+    }
+
+    &-about{
+        padding-top: 162px;
+        @include image-set("/static/images/mainPageHeader-about_background", "png");
+        background-position: 0px 162px;
+        background-repeat: no-repeat;
+
+        @media only screen and (max-width: 1300px){
+            padding-top: 162px - 68px;
+            padding-bottom: 100px;
+            background-position: -9px 452px;
+        }
+
+        @media only screen and (max-width: 1050px){
+            padding-top: 162px - 48px;
+        }
+
+        @media only screen and (max-width: 500px){
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 20px;
+            padding-bottom: 0px;
+            background-position: -9px 582px;
+        }
+    }
+}

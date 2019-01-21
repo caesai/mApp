@@ -1,0 +1,267 @@
+.yourCryptocurrencies{
+    padding-left: 130px;
+    padding-right: 130px;
+
+    @media only screen and (max-width: 1300px){
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    @media only screen and (max-width: 1200px){
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    &-title{
+        font-family: 'Rubik';
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.33;
+        text-align: center;
+        color: #1d2249;
+
+        @media only screen and (max-width: 800px){
+            font-size: 15px;
+            line-height: 1.6;
+        }
+    }
+
+    &-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 34px;
+
+        @media only screen and (max-width: 800px){
+            margin-top: 20px;
+        }
+
+        &-item{
+            width: (380px / (1440px - 130px * 2)) * 100%;
+
+            @media only screen and (max-width: 1050px){
+                width: (354px / (768px - 2 * 20px)) * 100%;
+            }
+
+            @media only screen and (max-width: 650px){
+                width: 100%;
+            }
+        }
+    }
+
+    &-showEverything{
+        @extend %showEverything;
+    }
+
+    &-more{
+        @extend %more;
+        
+        font-size: 15px;
+        font-weight: 500;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        width: 366px;
+
+        @media only screen and (max-width: 500px){
+            width: 280px;
+            text-align: center;
+            padding-left: 0px;
+        }
+
+        &.button._arrowRight{
+
+            &::after{
+                @media only screen and (max-width: 500px){
+                    display: none;
+                }
+            }
+
+        }
+    }
+}
+
+.yourCryptocurrency{
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px 0 rgba(70, 86, 132, 0.05), 0 15px 55px 0 rgba(157, 163, 180, 0.16);
+    background-color: #ffffff;
+    position: relative;
+    margin-bottom: 20px;
+    border: 2px solid #fff;
+    cursor: pointer;
+    @include user-select(none);
+
+    &-withdrawal{
+        position: absolute;
+        display: none;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background-color: rgba(255, 255, 255, 0.8);
+        align-items: center;
+        border-radius: 6px;
+
+        &-button{
+            margin-left: auto;
+            margin-right: auto;
+            width: 200px;
+            height: 54px;
+            line-height: 50px;
+            border-radius: 27px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+        }
+    }
+
+    &:hover{
+        .yourCryptocurrency-withdrawal{
+            display: flex;
+        }
+    }
+
+    &._active{
+        border: 2px solid #00b1ff;
+
+        .yourCryptocurrency{
+            &-content{
+                &-title{
+                    &::after{
+                        content: '';
+                        display: inline-block;
+                        height: 23px;
+                        width: 20px;
+                        position: absolute;
+                        top: -1px;
+                        padding-left: 13px;
+
+                        @include image-set("/static/images/yourCryptocurrency_active", "png");
+                        background-position: right top;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1100px){
+        margin-bottom: 13px;
+    }
+    
+    &-icon{
+        position: absolute;
+        left: -2px;
+        top: 0px;
+        width: 86px;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 19px;
+
+        @media only screen and (max-width: 1100px){
+            padding-left: 15px;
+            padding-right: 11px;
+            width: 61px;
+        }
+
+        > img{
+            display: block;
+            max-width: 100%;
+            margin: auto;
+        }
+    }
+
+    &-content{
+        height: 100%;
+        padding-left: 84px;
+        padding-top: 24px;
+        padding-bottom: 20px;
+        padding-right: 16px;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        @media only screen and (max-width: 1100px){
+            padding-top: 17px;
+            padding-right: 14px;
+            padding-bottom: 12px;
+            padding-left: 61px;
+        }
+
+        @media only screen and (max-width: 650px){
+            padding-right: 15px;
+        }
+
+        &-title{
+            font-family: 'Rubik';
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.33;
+            color: #1d2249;
+            width: 48%;
+            position: relative;
+            top: 1px;
+
+            @media only screen and (max-width: 1100px){
+                font-size: 15px;
+                line-height: 1.6;
+                top: 0px;
+            }
+        }
+
+        &-value{
+            width: 48%;
+            font-family: 'Rubik';
+            font-size: 20px;
+            font-weight: 500;
+            line-height: 1.2;
+            color: #00b1ff;
+            text-align: right;
+
+            @media only screen and (max-width: 1100px){
+                font-size: 18px;
+                line-height: 1.33;
+            }
+        }
+
+        &-valueInUsd{
+            width: 48%;
+            font-family: 'Rubik';
+            font-size: 12px;
+            line-height: 2;
+            color: #777a92;
+            padding-top: 4px;
+            padding-left: 1px;
+
+            @media only screen and (max-width: 1100px){
+                font-size: 11px;
+                line-height: 2;
+                padding-top: 0px;
+            }
+        }
+
+        &-miningSpeed{
+            width: 48%;
+            font-family: 'Rubik';
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 2;
+            text-align: right;
+            color: #777a92;
+            padding-top: 4px;
+
+            @media only screen and (max-width: 1100px){
+                font-size: 11px;
+                line-height: 2;
+                padding-top: 0px;
+            }
+        }
+    }
+}

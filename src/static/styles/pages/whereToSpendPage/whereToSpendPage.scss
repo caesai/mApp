@@ -1,0 +1,15 @@
+.whereToSpendPage{
+    &-item{
+        width: (526px / (1440px - 130px - 184px)) * 100%;
+        margin-bottom: 54px;
+
+        @media only screen and (max-width: 1150px){
+            width: (323px / (768px - 20px - 45px)) * 100%;
+            margin-bottom: 54px - 11px;
+        }
+
+        @media only screen and (max-width: 500px){
+            width: 100%;
+        }
+    }
+}

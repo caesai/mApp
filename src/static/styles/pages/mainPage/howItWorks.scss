@@ -1,0 +1,149 @@
+.howItWorks{
+    background-position: right 0px;
+    background-repeat: no-repeat;
+    padding-top: 9px + 154px;
+    margin-top: -154px;
+    padding-bottom: 446px;
+    padding-left: 130px;
+    padding-right: 130px;
+    @include image-set("/static/images/howItWorks_background", "png");
+
+    @media only screen and (max-width: 1300px){
+        background-size: 54%;
+        background-position: right -200px top -50px;
+
+        padding-bottom: 311px;
+    }
+
+    @media only screen and (max-width: 1250px){
+        padding-left: 60px;
+        padding-right: 60px;
+
+        background-position: right -200px top -100px;
+
+        padding-bottom: 246px;
+    }
+
+    @media only screen and (max-width: 1200px){
+        background-position: right -150px top -50px;
+
+        padding-bottom: 246px;
+    }
+
+    @media only screen and (max-width: 1150px){
+        background-position: right -150px top -50px;
+
+        padding-bottom: 322px;
+    }
+
+    @media only screen and (max-width: 1100px){
+        padding-bottom: 280px;
+    }
+
+    @media only screen and (max-width: 1050px){
+        padding-bottom: 230px;
+    }
+
+    @media only screen and (max-width: 1000px){
+        padding-bottom: 155px;
+    }
+
+    @media only screen and (max-width: 950px){
+        padding-bottom: 115px;
+    }
+
+    @media only screen and (max-width: 900px){
+        margin-top: -103px;
+        padding-top: 103px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 150px;
+
+        background-size: auto;
+        background-position: right 61px;        
+
+        @include image-set("/static/images/howItWorks_background_tablet", "png");
+    }
+
+    @media only screen and (max-width: 850px){
+        padding-bottom: 146px;
+    }
+
+    @media only screen and (max-width: 700px){
+        background-position: top right -50px;
+    }
+
+    @media only screen and (max-width: 650px){
+        background-position: top right -100px;
+    }
+
+    @media only screen and (max-width: 600px){
+        background-position: top right -150px;
+    }
+
+    @media only screen and (max-width: 550px){
+        background-position: top right -150px;
+    }
+
+    @media only screen and (max-width: 500px){
+        @include image-set("/static/images/howItWorks_background_phone", "png");        
+        background-position: center bottom 128px;
+        padding-bottom: 211px;
+    }
+
+    &-title{
+        @extend %title;
+        width: (590px / 1440px) * 100%;
+
+        @media only screen and (max-width: 900px){
+            width: (364px / 768px) * 100%;
+        }
+
+        @media only screen and (max-width: 500px){
+            width: auto;
+            text-align: center;
+        }
+    }
+
+    &-text{
+        margin-top: 44px;        
+        width: (750px / 1440px) * 100%;
+
+        @extend %text;
+
+        @media only screen and (max-width: 900px){
+            width: (380px / 768px) * 100%;
+            margin-top: 29px;
+        }
+
+        @media only screen and (max-width: 700px){
+            width: (380px / 768px) * 120%;
+        }
+
+        @media only screen and (max-width: 700px){
+            width: (380px / 768px) * 130%;
+        }
+
+        @media only screen and (max-width: 500px){
+            width: auto;
+            text-align: center;
+        }
+    }
+
+    &-more{
+        margin-top: 52px;
+
+        @extend %more;
+
+        @media only screen and (max-width: 900px){
+            margin-top: 23px;
+            width: 208px;
+        }
+
+        @media only screen and (max-width: 500px){
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 409px;
+        }
+    }
+}

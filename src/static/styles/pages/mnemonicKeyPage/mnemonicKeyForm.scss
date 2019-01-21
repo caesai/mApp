@@ -1,0 +1,92 @@
+.mnemonicKeyForm{
+    width: auto;
+
+    @media only screen and (max-width: 1100px){
+        width: auto;
+    }
+
+    @media only screen and (max-width: 500px){
+        width: auto;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    &-note{
+        font-family: 'Rubik';
+        font-size: 18px;
+        line-height: 1.56;
+        text-align: center;
+        color: #2e2e39;
+
+        @media only screen and (max-width: 1100px){
+            font-size: 15px;
+            line-height: 1.6;
+        }
+    }
+
+    &-phrase{
+        margin: auto;
+        margin-top: 42px;
+        margin-bottom: 55px - (56px - 24px - 14px - 2px);
+        padding-top: 39px;
+        padding-bottom: 39px;
+        padding-left: 80px;
+        padding-right: 80px;
+        border-radius: 6px;
+        border: solid 2px #bce2ff;
+        font-family: 'Rubik';
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.6;
+        text-align: center;
+        color: #2e2e39;
+        width: (700px / 1440px) * 100%;
+
+        @media only screen and (max-width: 1100px){
+            font-size: 15px;
+            line-height: 1.6;
+            padding-top: 32px;
+            padding-bottom: 28px;
+            padding-left: 33px;
+            padding-right: 33px;
+            width: 352px;
+            margin-top: 23px;
+            margin-bottom: 43px - 16px;
+        }
+
+        @media only screen and (max-width: 500px){
+            width: auto;
+            padding-left: 27px;
+            padding-right: 27px;
+            padding-top: 34px;
+            padding-bottom: 34px;
+            margin-bottom: 43px - 15px;
+        }
+    }
+
+    &-field{
+        width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media only screen and (max-width: 1100px){
+            width: 352px;
+        }
+
+        @media only screen and (max-width: 500px){
+            width: 278px;
+        }
+    }
+
+    &-submit{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 40px;
+        width: 278px;
+
+        @media only screen and (max-width: 1100px){
+            margin-top: 30px;
+            width: 280px;
+        }
+    }
+}

@@ -1,0 +1,57 @@
+@import "reset.scss";
+@import "fonts.scss";
+@import "patterns/mixins.scss";
+@import "patterns/extends.scss";
+@import "patterns/form.scss";
+@import "patterns/content.scss";
+@import "patterns/button.scss";
+@import "patterns/popup.scss";
+@import "patterns/blockWithRightAdvertPanel.scss";
+
+@import "layout/header.scss";
+@import "layout/footer.scss";
+@import "layout/container.scss";
+
+@import "pages/allPages/withdrawalPopupForm.scss";
+
+@import "pages/mainPage/mainPageHeader.scss";
+@import "pages/mainPage/about.scss";
+@import "pages/mainPage/miningOnAnyDeviceAdvert.scss";
+@import "pages/mainPage/howItWorks.scss";
+@import "pages/mainPage/whereToSpend.scss";
+@import "pages/mainPage/blogPreview.scss";
+@import "pages/mainPage/startMiningBlock.scss";
+
+@import "pages/yourCryptocurrenciesPage/loginOnPage.scss";
+@import "pages/yourCryptocurrenciesPage/yourCryptocurrencies.scss";
+@import "pages/yourCryptocurrenciesPage/yourCryptocurrenciesPage.scss";
+
+@import "pages/loginPage/loginForm.scss";
+@import "pages/loginPage/loginPage.scss";
+
+@import "pages/restorePasswordPage/restorePasswordForm.scss";
+@import "pages/restorePasswordPage/restorePasswordPage.scss";
+
+@import "pages/feedbackPage/feedbackForm.scss";
+@import "pages/feedbackPage/feedbackPage.scss";
+
+@import "pages/mnemonicKeyPage/mnemonicKeyForm.scss";
+@import "pages/mnemonicKeyPage/mnemonicKeyPage.scss";
+
+@import "pages/settingsPage/setting.scss";
+@import "pages/settingsPage/settingsPage.scss";
+
+@import "pages/walletsPage/wallets.scss";
+@import "pages/walletsPage/walletsPage.scss";
+
+@import "pages/whereToSpendPage/whereToSpendPage.scss";
+
+@import "pages/textPage/textPage.scss";
+
+@import "pages/contactsPage/contacts.scss";
+@import "pages/contactsPage/contactsPage.scss";
+
+@import "pages/blogPage/blog.scss";
+@import "pages/blogPage/blogPage.scss";
+
+@import "pages/errorPage/errorPage.scss";

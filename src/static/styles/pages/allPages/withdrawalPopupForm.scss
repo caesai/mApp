@@ -1,0 +1,122 @@
+.withdrawalPopupForm{
+    &-field{
+        width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+
+        @media only screen and (max-width: 900px){
+            width: 280px;
+        }
+
+        @media only screen and (max-width: 500px){
+            width: 220px;
+        }
+
+        &-max{
+            @include user-select(none);
+            width: 58px;
+            height: 32px;  
+            border-radius: 27px;
+            border: solid 2px #bce2ff;
+            position: absolute;
+            right: 0px;
+            top: 11px;
+            text-align: center;
+            line-height: 28px;
+            font-family: 'Rubik';
+            font-size: 13px;
+            font-weight: 500;
+            color: #00b1ff;
+            cursor: pointer;
+
+            &:hover{
+                border: solid 2px #00b1ff;
+            }
+    
+            &:active{
+                border: solid 2px #0083ff;
+                background-color: #0083ff;
+                color: #fff;
+            }
+    
+            &._loading{
+                background-color: #0083ff;
+                overflow: hidden;
+                text-indent: 100%;
+                background-repeat: no-repeat;
+                background-position: center;
+    
+                &::before{
+                    display: none;
+                }
+    
+                &::after{
+                    display: none;
+                }
+    
+                @include image-set("/static/images/button_blue_loading", "gif");            
+            }
+    
+            &._disabled{
+                opacity: 0.7;
+    
+                &:hover,
+                &:active{
+                    border: 2px solid transparent;
+                    color: #00b1ff;
+                    background-color: #ffffff;
+                }
+            }
+        }
+    }
+
+    &-aviable{
+        width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 16px;
+        padding-left: 1px;
+        font-family: 'Rubik';
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.33;
+        color: #00b1ff;
+
+        @media only screen and (max-width: 900px){
+            font-size: 15px;
+            line-height: 1.6;
+            margin-top: 15px;
+            padding-left: 0px;
+        }
+
+        @media only screen and (max-width: 500px){
+            width: 220px;
+        }
+
+        > span{
+            font-family: 'Rubik';
+            font-size: 15px;
+            line-height: 1.6;
+            color: #1d2249;
+            font-weight: 500;
+            margin-right: 4px;
+
+            @media only screen and (max-width: 900px){
+                font-size: 13px;
+                line-height: 1.85;
+            }
+        }
+    }
+
+    &-submit{
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 33px;
+        width: 176px;
+
+        @media only screen and (max-width: 900px){
+            width: 168px;
+            margin-top: 22px;
+        }
+    }
+}

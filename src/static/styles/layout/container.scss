@@ -1,0 +1,277 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    box-sizing: border-box;
+    font-family: 'Rubik';
+    font-weight: 400;
+    font-style: normal;
+}
+
+html,
+body{
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+*{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body::after{
+    position:absolute; width:0; height:0; overflow:hidden; z-index:-1;
+    content: url(/static/images/button_blue_disabled.png)
+    url(/static/images/button_blue_disabled@2x.png)
+    url(/static/images/button_blue_disabled@3x.png)
+    url(/static/images/button_blue.png)
+    url(/static/images/button_blue@2x.png)
+    url(/static/images/button_blue@3x.png)
+    url(/static/images/503.png)
+    url(/static/images/503@2x.png)
+    url(/static/images/503@3x.png)
+    url(/static/images/errorPage_left@3x.png)
+    url(/static/images/errorPage_right.png)
+    url(/static/images/errorPage_right@2x.png)
+    url(/static/images/errorPage_right@3x.png)
+    url(/static/images/errorPage_left.png)
+    url(/static/images/errorPage_left@2x.png)
+    url(/static/images/404.png)
+    url(/static/images/404@2x.png)
+    url(/static/images/404@3x.png)
+    url(/static/images/facebook.png)
+    url(/static/images/facebook@2x.png)
+    url(/static/images/facebook@3x.png)
+    url(/static/images/instagram.png)
+    url(/static/images/instagram@2x.png)
+    url(/static/images/instagram@3x.png)
+    url(/static/images/orderToAdvertising.png)
+    url(/static/images/orderToAdvertising@2x.png)
+    url(/static/images/orderToAdvertising@3x.png)
+    url(/static/images/wallet-address-copyButton_blue.png)
+    url(/static/images/wallet-address-copyButton_blue@2x.png)
+    url(/static/images/wallet-address-copyButton_blue@3x.png)
+    url(/static/images/wallet-address-copyButton.png)
+    url(/static/images/wallet-address-copyButton@2x.png)
+    url(/static/images/wallet-address-copyButton@3x.png)
+    url(/static/images/dropDownArrow_big.png)
+    url(/static/images/dropDownArrow_big@2x.png)
+    url(/static/images/dropDownArrow_big@3x.png)
+    url(/static/images/dropUpArrow_big.png)
+    url(/static/images/dropUpArrow_big@2x.png)
+    url(/static/images/dropUpArrow_big@3x.png)
+    url(/static/images/dropUpArrow.png)
+    url(/static/images/dropUpArrow@2x.png)
+    url(/static/images/dropUpArrow@3x.png)
+    url(/static/images/closeIcon@2x.png)
+    url(/static/images/closeIcon@3x.png)
+    url(/static/images/closeIcon.png)
+    url(/static/images/userPanelMenu-item_adresses_deepBlue.png)
+    url(/static/images/userPanelMenu-item_adresses_deepBlue@2x.png)
+    url(/static/images/userPanelMenu-item_adresses_deepBlue@3x.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies_deepBlue.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies_deepBlue@2x.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies_deepBlue@3x.png)
+    url(/static/images/userPanelMenu-item_logout_deepBlue.png)
+    url(/static/images/userPanelMenu-item_logout_deepBlue@2x.png)
+    url(/static/images/userPanelMenu-item_logout_deepBlue@3x.png)
+    url(/static/images/userPanelMenu-item_settings_deepBlue.png)
+    url(/static/images/userPanelMenu-item_settings_deepBlue@2x.png)
+    url(/static/images/userPanelMenu-item_settings_deepBlue@3x.png)
+    url(/static/images/userPanelMenu-item_logout_gray.png)
+    url(/static/images/userPanelMenu-item_logout_gray@2x.png)
+    url(/static/images/userPanelMenu-item_logout_gray@3x.png)
+    url(/static/images/userPanelMenu-item_adresses_gray.png)
+    url(/static/images/userPanelMenu-item_adresses_gray@2x.png)
+    url(/static/images/userPanelMenu-item_adresses_gray@3x.png)
+    url(/static/images/userPanelMenu-item_settings_gray.png)
+    url(/static/images/userPanelMenu-item_settings_gray@2x.png)
+    url(/static/images/userPanelMenu-item_settings_gray@3x.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies_gray.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies_gray@2x.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies_gray@3x.png)
+    url(/static/images/dropDownArrow.png)
+    url(/static/images/dropDownArrow@2x.png)
+    url(/static/images/dropDownArrow@3x.png)
+    url(/static/images/yourCryptocurrency_active.png)
+    url(/static/images/yourCryptocurrency_active@2x.png)
+    url(/static/images/yourCryptocurrency_active@3x.png)
+    url(/static/images/form-input_error.png)
+    url(/static/images/form-input_error@2x.png)
+    url(/static/images/form-input_error@3x.png)
+    url(/static/images/arrowDown_hover.png)
+    url(/static/images/arrowDown_hover@2x.png)
+    url(/static/images/arrowDown_hover@3x.png)
+    url(/static/images/userPanelMenu-item_adresses_blue.png)
+    url(/static/images/userPanelMenu-item_adresses_blue@2x.png)
+    url(/static/images/userPanelMenu-item_adresses_blue@3x.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies_blue.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies_blue@2x.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies_blue@3x.png)
+    url(/static/images/userPanelMenu-item_logout_blue.png)
+    url(/static/images/userPanelMenu-item_logout_blue@2x.png)
+    url(/static/images/userPanelMenu-item_logout_blue@3x.png)
+    url(/static/images/userPanelMenu-item_settings_blue.png)
+    url(/static/images/userPanelMenu-item_settings_blue@2x.png)
+    url(/static/images/userPanelMenu-item_settings_blue@3x.png)
+    url(/static/images/userPanelMenu-item_logout@2x.png)
+    url(/static/images/userPanelMenu-item_logout@3x.png)
+    url(/static/images/userPanelMenu-item_adresses.png)
+    url(/static/images/userPanelMenu-item_adresses@2x.png)
+    url(/static/images/userPanelMenu-item_adresses@3x.png)
+    url(/static/images/userPanelMenu-item_logout.png)
+    url(/static/images/userPanelMenu-item_settings.png)
+    url(/static/images/userPanelMenu-item_settings@2x.png)
+    url(/static/images/userPanelMenu-item_settings@3x.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies@2x.png)
+    url(/static/images/userPanelMenu-item_cryptocurrencies@3x.png)
+    url(/static/images/header-logo_white.png)
+    url(/static/images/header-logo_white@2x.png)
+    url(/static/images/header-logo_white@3x.png)
+    url(/static/images/arrowDown.png)
+    url(/static/images/arrowDown@2x.png)
+    url(/static/images/arrowDown@3x.png)
+    url(/static/images/pageTopDecoration.png)
+    url(/static/images/pageTopDecoration@2x.png)
+    url(/static/images/pageTopDecoration@3x.png)
+    url(/static/images/whereToSpend_background_mobile.png)
+    url(/static/images/whereToSpend_background_mobile@2x.png)
+    url(/static/images/whereToSpend_background_mobile@3x.png)
+    url(/static/images/howItWorks_background_phone.png)
+    url(/static/images/howItWorks_background_phone@2x.png)
+    url(/static/images/howItWorks_background_phone@3x.png)
+    url(/static/images/mainPageHeader_background_phone.png)
+    url(/static/images/mainPageHeader_background_phone@2x.png)
+    url(/static/images/mainPageHeader_background_phone@3x.png)
+    url(/static/images/mainPageHeader-about-buttons_background.png)
+    url(/static/images/mainPageHeader-about-buttons_background@2x.png)
+    url(/static/images/mainPageHeader-about-buttons_background@3x.png)
+    url(/static/images/howItWorks_background.png)
+    url(/static/images/howItWorks_background@2x.png)
+    url(/static/images/howItWorks_background@3x.png)
+    url(/static/images/howItWorks_background_tablet.png)
+    url(/static/images/howItWorks_background_tablet@2x.png)
+    url(/static/images/howItWorks_background_tablet@3x.png)
+    url(/static/images/about-buttons-video-button_tablet_white.png)
+    url(/static/images/about-buttons-video-button_tablet_white@2x.png)
+    url(/static/images/about-buttons-video-button_tablet_white@3x.png)
+    url(/static/images/header-menuIcon.png)
+    url(/static/images/header-menuIcon@2x.png)
+    url(/static/images/header-menuIcon@3x.png)
+    url(/static/images/about-buttons-video-button_tablet.png)
+    url(/static/images/about-buttons-video-button_tablet@2x.png)
+    url(/static/images/about-buttons-video-button_tablet@3x.png)
+    url(/static/images/mainPageHeader_background_tablet.png)
+    url(/static/images/mainPageHeader_background_tablet@2x.png)
+    url(/static/images/mainPageHeader_background_tablet@3x.png)
+    url(/static/images/startMiningBlock_background.png)
+    url(/static/images/startMiningBlock_background@2x.png)
+    url(/static/images/startMiningBlock_background@3x.png)
+    url(/static/images/whereToSpendItem-link-url.png)
+    url(/static/images/whereToSpendItem-link-url@2x.png)
+    url(/static/images/whereToSpendItem-link-url@3x.png)
+    url(/static/images/whereToSpend_decoration.png)
+    url(/static/images/whereToSpend_decoration@2x.png)
+    url(/static/images/whereToSpend_decoration@3x.png)
+    url(/static/images/whereToSpend_background.png)
+    url(/static/images/button_arrowRight_white.png)
+    url(/static/images/button_arrowRight_white@2x.png)
+    url(/static/images/button_arrowRight_white@3x.png)
+    url(/static/images/devicesList-list-item_console.png)
+    url(/static/images/devicesList-list-item_console@2x.png)
+    url(/static/images/devicesList-list-item_console@3x.png)
+    url(/static/images/devicesList-list-item_tablet.png)
+    url(/static/images/devicesList-list-item_tablet@2x.png)
+    url(/static/images/devicesList-list-item_tablet@3x.png)
+    url(/static/images/devicesList-list-item_phone.png)
+    url(/static/images/devicesList-list-item_phone@2x.png)
+    url(/static/images/devicesList-list-item_phone@3x.png)
+    url(/static/images/devicesList-list-item_computer.png)
+    url(/static/images/devicesList-list-item_computer@2x.png)
+    url(/static/images/devicesList-list-item_computer@3x.png)
+    url(/static/images/miningOnAnyDeviceAdvert_background.png)
+    url(/static/images/miningOnAnyDeviceAdvert_background@2x.png)
+    url(/static/images/miningOnAnyDeviceAdvert_background@3x.png)
+    url(/static/images/button_arrowRight.png)
+    url(/static/images/button_arrowRight@2x.png)
+    url(/static/images/button_arrowRight@3x.png)
+    url(/static/images/mainPageHeader-about_background.png)
+    url(/static/images/mainPageHeader-about_background@2x.png)
+    url(/static/images/mainPageHeader-about_background@3x.png)
+    url(/static/images/about-buttons-video-button_white.png)
+    url(/static/images/about-buttons-video-button_white@2x.png)
+    url(/static/images/about-buttons-video-button_white@3x.png)
+    url(/static/images/button_blue_loading.gif)
+    url(/static/images/button_blue_loading@2x.gif)
+    url(/static/images/button_blue_loading@3x.gif)
+    url(/static/images/about-buttons-video-button.png)
+    url(/static/images/about-buttons-video-button@2x.png)
+    url(/static/images/about-buttons-video-button@3x.png)
+    url(/static/images/about-buttons-startMining-button.png)
+    url(/static/images/about-buttons-startMining-button@2x.png)
+    url(/static/images/about-buttons-startMining-button@3x.png)
+    url(/static/images/button_transparent_loading@2x.gif)
+    url(/static/images/button_transparent_loading@3x.gif)
+    url(/static/images/button_transparent_loading.gif)
+    url(/static/images/header-logo.png)
+    url(/static/images/header-logo@2x.png)
+    url(/static/images/header-logo@3x.png)
+    url(/static/images/mainPageHeader_background.png)
+    url(/static/images/mainPageHeader_background@2x.png)
+    url(/static/images/mainPageHeader_background@3x.png)
+    url(/static/images/cryptocurrencies/eth@3x.png)
+    url(/static/images/cryptocurrencies/ltc.png)
+    url(/static/images/cryptocurrencies/ltc@2x.png)
+    url(/static/images/cryptocurrencies/ltc@3x.png)
+    url(/static/images/cryptocurrencies/neo.png)
+    url(/static/images/cryptocurrencies/neo@2x.png)
+    url(/static/images/cryptocurrencies/neo@3x.png)
+    url(/static/images/cryptocurrencies/xem.png)
+    url(/static/images/cryptocurrencies/xem@2x.png)
+    url(/static/images/cryptocurrencies/xem@3x.png)
+    url(/static/images/cryptocurrencies/xmr.png)
+    url(/static/images/cryptocurrencies/xmr@2x.png)
+    url(/static/images/cryptocurrencies/xmr@3x.png)
+    url(/static/images/cryptocurrencies/btc.png)
+    url(/static/images/cryptocurrencies/btc@2x.png)
+    url(/static/images/cryptocurrencies/btc@3x.png)
+    url(/static/images/cryptocurrencies/eth.png)
+    url(/static/images/cryptocurrencies/eth@2x.png);
+}
+
+.container{
+    position: relative;
+    min-width: 320px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &._innerPage{
+        background-position: right top;
+        background-repeat: no-repeat;
+        min-height: 506px;
+    
+        @include image-set("/static/images/pageTopDecoration", "png");
+
+        @media only screen and (max-width: 1150px){
+            background: none;
+        }
+    }
+
+    &._loggedIn{
+        background: none;
+    }
+
+    > div{
+        flex: 1 0 auto;
+    }
+}

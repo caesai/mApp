@@ -1,0 +1,256 @@
+.button{
+    @include user-select(none);
+    cursor: pointer;
+
+    &._transparent{
+        border: solid 2px #bce2ff;
+        box-shadow: 0 15px 55px 0 rgba(157, 163, 180, 0.2);
+        color: #ffffff;
+        text-align: center;
+        
+        &:hover{
+            border: solid 2px #ffffff;
+        }
+
+        &:active{
+            background-color: #1d2249;
+            border: solid 2px #1d2249;
+        }
+
+        &._disabled{
+            opacity: 0.7;
+
+            &:hover,
+            &:active{
+                color: #ffffff;
+                border: solid 2px #bce2ff;
+                background-color: transparent;
+            }
+        }
+
+        &._loading{
+            background-color: #1d2249;
+            border: solid 2px #1d2249;
+            overflow: hidden;
+            text-indent: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &::before{
+                display: none;
+            }
+
+            &::after{
+                display: none;
+            }
+
+            @include image-set("/static/images/button_transparent_loading", "gif");            
+        }
+    }
+
+    &._blue{
+        box-shadow: 0 8px 20px 0 rgba(70, 86, 132, 0.2), 0 15px 55px 0 rgba(157, 163, 180, 0.2);
+        color: #ffffff;
+        cursor: pointer;
+
+        @include image-set("/static/images/button_blue", "png");
+        background-repeat: repeat-y;
+        background-size: auto;
+
+        &:hover{
+            background-image: none;
+            background-color: #00b1ff;
+        }
+
+        &:active{
+            background-image: none;
+            background-color: #0083ff;
+        }
+
+        &._disabled{
+            @include image-set("/static/images/button_blue_disabled", "png");
+        }
+
+        &._loading{
+            background-color: #0083ff;
+            overflow: hidden;
+            text-indent: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &::before{
+                display: none;
+            }
+
+            &::after{
+                display: none;
+            }
+
+            @include image-set("/static/images/button_blue_loading", "gif");            
+        }
+    }
+
+    &._white{        
+        box-shadow: 0 8px 20px 0 rgba(70, 86, 132, 0.05), 0 15px 55px 0 rgba(157, 163, 180, 0.2);
+        background-color: #ffffff;
+        color: #00b1ff;
+        cursor: pointer;
+        border: solid 2px #bce2ff;
+
+        &:hover{
+            border: solid 2px #00b1ff;
+        }
+
+        &:active{
+            border: solid 2px #0083ff;
+            background-color: #0083ff;
+            color: #fff;
+        }
+
+        &._loading{
+            background-color: #0083ff;
+            overflow: hidden;
+            text-indent: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            &::before{
+                display: none;
+            }
+
+            &::after{
+                display: none;
+            }
+
+            @include image-set("/static/images/button_blue_loading", "gif");            
+        }
+
+        &._disabled{
+            opacity: 0.7;
+
+            &:hover,
+            &:active{
+                border: 2px solid transparent;
+                color: #00b1ff;
+                background-color: #ffffff;
+            }
+        }
+    }
+
+    &._arrowRight{
+        font-weight: 500;
+
+        &::after{
+            position: relative;
+            margin-left: 15px;
+            content: '';
+            display: inline-block;
+            height: 14px;
+            width: 18px;
+            background-repeat: no-repeat;
+            background-position: center;
+            @include image-set("/static/images/button_arrowRight", "png");
+            top: 2px;
+        }
+
+        &:active{
+            &::after{
+                @include image-set("/static/images/button_arrowRight_white", "png");
+            }
+        }
+    }
+
+    &._howItWorksInlineButton{
+        width: 244px;
+        height: 60px;
+        border-radius: 30px;
+        line-height: 56px;
+        text-align: center;
+        font-family: 'Rubik';
+        font-size: 15px;
+        font-weight: 500;
+        color: #00b1ff;
+
+        @media only screen and (max-width: 1300px){
+            height: 54px;
+            line-height: 50px;
+        }
+
+        @media only screen and (max-width: 900px){
+            width: 255px;
+        }
+
+        @media only screen and (max-width: 500px){
+            margin: auto;
+        }
+    }
+
+    &._startMiningInlineButton{
+        width: 275px;
+        padding-left: 89px;
+        position: relative;
+        line-height: 60px;
+        font-size: 18px;
+        font-weight: 400;
+        height: 60px;
+        border-radius: 30px;
+
+        @media only screen and (max-width: 1300px){
+            height: 54px;
+            line-height: 54px;
+        }
+
+        @media only screen and (max-width: 900px){
+            width: 275px;
+        }
+
+        @media only screen and (max-width: 500px){
+            margin: auto;
+        }
+
+        &::before{
+            content: '';
+            display: block;
+            position: absolute;
+            height: 34px;
+            width: 30px;
+            top: 13px;
+            left: 42px;
+            background-repeat: no-repeat;
+            @include image-set("/static/images/about-buttons-startMining-button", "png");
+
+            @media only screen and (max-width: 1300px){
+                top: 10px;
+            }
+        }
+    }
+}
+
+.buttons{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    @media only screen and (max-width: 600px){
+        display: block;
+    }
+
+    > .button{
+        margin-right: 20px;
+
+        @media only screen and (max-width: 600px){
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+
+        &:last-child{
+            margin-right: 0px;
+
+            @media only screen and (max-width: 600px){
+                margin-right: auto;
+                margin-bottom: 0px;
+            }
+        }
+    }
+}

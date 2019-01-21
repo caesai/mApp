@@ -1,0 +1,193 @@
+.wallets{
+    padding-left: 130px;
+    padding-right: 130px;
+
+    @media only screen and (max-width: 1400px){
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+
+    @media only screen and (max-width: 1300px){
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    &-filter{
+        @extend %formField;
+
+        margin-top: 0px;
+    }
+
+    &-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 40px;
+
+        &-item{
+            margin-bottom: 20px;
+
+            @media only screen and (max-width: 1200px){
+                margin-bottom: 12px;
+            }
+        }
+
+        @media only screen and (max-width: 1200px){
+            margin-top: 30px;
+        }
+    }
+
+    &-showEverything{
+        @extend %showEverything;
+    }
+}
+
+.wallet{
+    width: (580px / (1440px - 130px * 2)) * 100%;
+    border-radius: 6px;
+    box-shadow: 0 8px 20px 0 rgba(70, 86, 132, 0.05), 0 15px 55px 0 rgba(157, 163, 180, 0.16);
+    background-color: #ffffff;
+    padding: 27px 20px 30px 20px;
+
+    @media only screen and (max-width: 1200px){
+        width: (354px / (768px - 20px * 2)) * 100%;
+        padding: 22px 16px 21px 14px;
+    }
+
+    @media only screen and (max-width: 600px){
+        width: 100%;
+    }
+
+    &-type{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 7px;
+        height: 47px;
+        position: relative;
+        z-index: 1;
+
+        @media only screen and (max-width: 1200px){
+            margin-bottom: 0px;
+            height: 35px;
+        }
+
+        &-image{
+            width: 48px;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            @media only screen and (max-width: 1200px){
+                width: 35px;
+            }
+
+            > img{
+                max-width: 100%;
+                max-height: 100%;
+                display: block;
+                margin: auto;
+            }
+        }
+
+        &-name{
+            margin-left: 19px;
+            font-family: 'Rubik';
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 1.33;
+            color: #1d2249;
+
+            @media only screen and (max-width: 1200px){
+                margin-left: 11px;
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 1.6;
+                color: #1d2249;
+            }
+        }
+    }
+
+    &-address{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @media only screen and (max-width: 1200px){
+            display: block;
+        }
+
+        &-input{
+            @extend %formField;
+
+            width: (380px / (580px - 2 * 20px)) * 100%;
+            margin-top: 0px;
+            height: 54px;
+            position: relative;
+
+            &::after{
+                content: '';
+                display: block;
+                width: 20px;
+                position: absolute;
+                right: 0px;
+                top: 6px;
+                bottom: 6px;
+                box-shadow: inset -37px 0px 17px -20px rgba(255,255,255,1);;
+                overflow: hidden;
+            }
+
+            input{
+                font-size: 15px;
+                font-weight: 500;
+                line-height: 1.6;
+                color: #777a92;
+                height: 50px;
+                padding-left: 1px;
+
+                &:focus{
+                    color: #000000;
+                }
+
+                @media only screen and (max-width: 1200px){
+                    font-size: 13px;
+                    padding-left: 0px;
+                }
+            }
+
+            @media only screen and (max-width: 1200px){
+                width: 100%;
+                margin-top: -3px;
+            }
+        }
+
+        &-copyButton{
+            font-family: 'Rubik';
+            font-size: 15px;
+            font-weight: 500;
+            line-height: 22px;
+            color: #00b1ff;
+            cursor: pointer;
+            margin-top: 16px;
+            padding-left: 33px;
+            background-position: left center;
+            background-repeat: no-repeat;
+
+            @include user-select(none);
+            @include image-set("/static/images/wallet-address-copyButton", "png");
+
+            @media only screen and (max-width: 1200px){
+                font-size: 13px;
+                margin-top: 18px;
+            }
+
+            &:hover{
+                color: #0083ff;
+
+                @include image-set("/static/images/wallet-address-copyButton_blue", "png");
+            }
+        }
+    }
+}

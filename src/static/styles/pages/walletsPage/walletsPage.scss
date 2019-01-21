@@ -1,0 +1,17 @@
+.content._walletsPage{
+    padding-bottom: 151px;
+
+    @media only screen and (max-width: 650px){
+        padding-bottom: 49px;
+    }
+
+    .content{
+        &-title{
+            margin-bottom: 45px;
+
+            @media only screen and (max-width: 1100px){
+                margin-bottom: 13px;
+            }
+        }
+    }
+}

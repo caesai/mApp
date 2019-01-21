@@ -1,0 +1,76 @@
+.footer{
+    padding-left: 130px;
+    padding-right: 130px;
+    padding-bottom: 42px;
+    padding-top: 21px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 21px + 24px + 42px;
+
+    @media only screen and (max-width: 1300px){
+        display: block;
+        justify-content: auto;
+        align-items: auto;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-top: 0px;
+        padding-bottom: 30px;
+
+        height: 21px + 24px + 30px;
+    }
+
+    @media only screen and (max-width: 500px){
+    }
+
+    &-copyright{
+        opacity: 0.6;
+        font-family: 'Rubik';
+        font-size: 13px;
+        line-height: 1.85;
+        color: #1d2249;
+
+        @media only screen and (max-width: 1300px){
+            text-align: center;
+        }
+    }
+
+    &-menu{
+    }
+}
+
+.footerMenu{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    @media only screen and (max-width: 1300px){
+        display: none;
+    }
+
+    &-item{
+        font-family: 'Rubik';
+        font-size: 13px;
+        line-height: 1.85;
+        color: #1d2249;
+        margin-left: 32px;
+
+        > a{
+            color: #1d2249;
+            cursor: pointer;
+            text-decoration: none;
+
+            &:hover{
+                color: #00b1ff;
+            }
+        }
+
+        &:first-child{
+            margin-left: 0px;
+        }
+    }
+}
+
+.container > div.footer{
+    flex: 0 0 auto;
+}

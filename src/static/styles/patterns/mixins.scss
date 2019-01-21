@@ -1,0 +1,47 @@
+@mixin image-set($name, $extension){
+    background-image: url("#{$name}.#{$extension}");
+    background-image: -webkit-image-set(url("#{$name}.#{$extension}") 1x, url("#{$name}@2x.#{$extension}") 2x, url("#{$name}@3x.#{$extension}") 3x);
+    background-image: image-set(url("#{$name}.#{$extension}") 1x, url("#{$name}@2x.#{$extension}") 2x, url("#{$name}@3x.#{$extension}") 3x);
+}
+
+@mixin user-select($select) {
+	-webkit-user-select: $select;
+	-khtml-user-drag: $select;
+	-khtml-user-select: $select;
+	-moz-user-select: $select;
+	@if $select == none { -moz-user-select: -moz-none; }
+	-ms-user-select: $select;
+	user-select: $select;
+}
+
+@mixin optional-at-root($sel) {
+	@at-root #{if(not &, $sel, selector-append(&, $sel))} {
+		@content;
+	}
+}
+  
+@mixin placeholder{
+	@include optional-at-root('::-webkit-input-placeholder') {
+		@content;
+	}
+
+	@include optional-at-root(':-moz-placeholder') {
+		@content;
+	}
+
+	@include optional-at-root('::-moz-placeholder') {
+		@content;
+	}
+
+	@include optional-at-root(':-ms-input-placeholder') {
+		@content;
+	}
+}
+
+@mixin filter($filter) {
+	-webkit-filter: $filter;
+	-moz-filter: $filter;
+	-o-filter: $filter;
+	-ms-filter: $filter;
+	filter:  $filter;
+}

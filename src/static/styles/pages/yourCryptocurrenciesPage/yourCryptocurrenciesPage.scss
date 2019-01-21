@@ -1,0 +1,25 @@
+.content._yourCryptocurrenciesPage{
+    padding-bottom: 151px;
+
+    @media only screen and (max-width: 650px){
+        padding-bottom: 49px;
+    }
+
+    .content{
+        &-yourCryptocurrencies{
+            margin-top: 54px;
+
+            @media only screen and (max-width: 1100px){
+                margin-top: 31px;
+            }
+
+            @media only screen and (max-width: 650px){
+                margin-top: 29px;
+            }
+        }
+
+        &-loginOnPage{
+            margin-top: 38px;
+        }
+    }
+}
