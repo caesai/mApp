@@ -1,93 +1,68 @@
-# mApp
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![Build Status](https://travis-ci.org/caesai/mApp.svg?branch=master)](https://travis-ci.org/caesai/mApp)
+## Available Scripts
 
-[Working Example](https://mining-889ab.firebaseapp.com/)
+In the project directory, you can run:
 
+### `npm start`
 
-# Development stages and roadmap
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-Project consists of three main steps:
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
-1. Rust Server
+### `npm test`
 
-- Acts as proxy between the clients (the browser miners) and the pool server
-- WebAssembly module which will be delivered to client-side, containing efficient proof-of-work implementation
+Launches the test runner in the interactive watch mode.<br>
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-2. Pool server
+### `npm run build`
 
-- External pools managment and proxy logic, system's key managment (systems wallets)
-- Internal PoW pool which distributes computational puzzle to clients
-- Algorand consensus implementation as an attempt to have autonomous mining (since we think that algorand scales in just the right way)
+Builds the app for production to the `build` folder.<br>
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-3. Client
+The build is minified and the filenames include the hashes.<br>
+Your app is ready to be deployed!
 
-Website and native app for mobile devices
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-- Account settings (private key and wallet to interact with mining-pool and blockchain)
-- Hashing functions
-- WebAssembly module
+### `npm run eject`
 
-## Client(Web)
-### Sprint.1
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-- Sign up / sign in logic and basic authorization (@midan888)
-- Profile page with creating private key and wallet
-We will use hierarchical deterministic flow to make wallet. [Some info about HD Wallets](https://bits.media/hd-wallet/). We need to use Bitcoin Improvement Protocol [BitcoinJs Lib](https://github.com/bitcoinjs/bitcoinjs-lib), [BIP32](https://github.com/bitcoinjs/bip32-utils), [BIP39](https://github.com/bitcoinjs/bip39), [BIP44](https://github.com/bitcoinjs/bip44-constants).(@midan888)
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-[Also info about creating bitcoin address](http://procbits.com/2013/08/27/generating-a-bitcoin-address-with-javascript)
+Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-[Yet another way to make address](https://github.com/bitcoinjs/bitcoinjs-lib/issues/997)
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-[Some info to make ether address](https://ethereum.stackexchange.com/questions/39384/how-to-generate-private-key-public-key-and-address)
+## Learn More
 
-[Also sources to investigate how to make monero address](https://moneroaddress.org/)
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-[Base58 encoding scheme](https://monerodocs.org/cryptography/base58/)
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-[Reddit about monero addresses](https://www.reddit.com/r/Monero/comments/70kpg7/writing_a_js_miner_client_where_to_start/)
-- Prepare module for hashing functions
-- Research on Algorand, Monero and Zcash mining and consensus. WebAssembly + rust setup. (@ilerik)
+### Code Splitting
 
-### Sprint.2
+This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
-- Creating ECDSA keys for authorization and signing up
+### Analyzing the Bundle Size
 
-First of all we need to use [crypto module from NodeJs](https://nodejs.org/api/crypto.html).
-Then [secp256k1 library](https://www.npmjs.com/package/secp256k1) for generating private and public keys.
-After installing all needed libraries we should create BTC and ETH addresses to our wallets.
-[The whole implementation lays here](https://github.com/caesai/WebApp/blob/mnemonic/src/components/Key.js)
+This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-- Authorization and sign up
+### Making a Progressive Web App
 
-The main idea of authorization and sign up is to use public key which we created in previous step and send it to our Rust server with username and signature which will be verified on server side.
+This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-For signing our public key we can use [this implementation](https://github.com/cryptocoinjs/secp256k1-node/blob/master/API.md#signbuffer-message-buffer-privatekey--object-options---signature-buffer-recovery-number)
+### Advanced Configuration
 
-We send to server username, public key and signature in respond we will receive access token. Access token and keys should be kept in localstorage or some storage on client side, which we can retrieve in case user forgot his login key or some other important data by restoring private and other keys with mnemonic passphrase.
+This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-So we have client with libraries and functions to create private and public keys, we use these keys to create Bitcoin and Ethereum wallets, we send public key and username to our server to verify user, receive access token and let our user to manage app.
+### Deployment
 
-- Staging environment setup (docker-machine, ethereum testnet)
+This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
-When keys and addresses ready we start testnet and create some users to test Wallets.
+### `npm run build` fails to minify
 
-- Continuous integration and continuous delivery (CI/CD)
-
-We make a new server which will keep our frontend appliction so we can start alpha testing.
-
-- Adding WebAssembly module to an app
-
-After we deploy frontend application we can add webassembly module which will be consist of hashing functions for creating keys and verifying user, also for mining.
-
-- First pool implementation which serves as a proxy between the system and external pools (@ilerik)
-
-### Sprint.3
-
-- Frontend application and design alpha version
-- Production environment setup, information security audit and backups logic
-- Pool upgrades to be an autonomous miner (probably will work with Algorand) (@ilerik)
-
-## hasher.js API
-
-### methods
+This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

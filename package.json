@@ -1,84 +1,30 @@
 {
-  "name": "mapp",
-  "version": "0.0.3",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "clean": "rimraf dist",
-    "build": "npm run clean && webpack --progress --mode production",
-    "start": "webpack-dev-server --progress --mode development",
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/caesai/mApp.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/caesai/mApp/issues"
-  },
-  "homepage": "https://github.com/caesai/mApp#readme",
-  "jest": {
-    "verbose": true,
-    "moduleDirectories": [
-      "node_modules"
-    ]
-  },
+  "name": "simple-mining",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
-    "@babel/core": "^7.1.0",
-    "@babel/plugin-proposal-class-properties": "^7.1.0",
-    "@babel/plugin-proposal-export-default-from": "^7.0.0",
-    "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
-    "@babel/preset-react": "^7.0.0",
-    "@material-ui/core": "^1.5.1",
-    "@material-ui/icons": "^1.1.1",
     "axios": "^0.18.0",
-    "babel-polyfill": "^6.26.0",
-    "bip39": "^2.5.0",
-    "bitcoinjs-lib": "^3.3.2",
-    "crypto": "^1.0.1",
-    "ethereumjs-util": "^5.2.0",
-    "exonum-client": "^0.11.1",
-    "jshashes": "^1.0.7",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "react-redux": "^5.0.7",
+    "classnames": "^2.2.6",
+    "node-sass": "^4.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
     "react-router-dom": "^4.3.1",
-    "recompose": "^0.27.1",
-    "redux": "^4.0.0",
-    "redux-devtools-extension": "^2.13.5",
-    "redux-thunk": "^2.3.0",
-    "safe-buffer": "^5.1.2",
-    "secp256k1": "^3.5.2",
-    "sha256": "^0.2.0",
-    "styled-components": "^3.4.9",
-    "typeface-rubik": "0.0.54",
-    "validator": "^10.8.0",
-    "web3": "^1.0.0-beta.36"
+    "react-scripts": "2.1.3",
+    "universal-cookie": "^3.0.7"
   },
-  "devDependencies": {
-    "axios-mock-adapter": "^1.15.0",
-    "babel-eslint": "^9.0.0",
-    "babel-loader": "^8.0.2",
-    "babel-plugin-styled-components": "^1.7.1",
-    "css-loader": "^1.0.0",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-import-resolver-webpack": "^0.10.1",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "file-loader": "^2.0.0",
-    "html-webpack-plugin": "^3.2.0",
-    "jest": "^23.6.0",
-    "rimraf": "^2.6.2",
-    "style-loader": "^0.22.1",
-    "url-loader": "^1.1.1",
-    "webpack": "^4.20.1",
-    "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.9"
-  }
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
