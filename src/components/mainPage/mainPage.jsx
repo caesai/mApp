@@ -12,7 +12,6 @@ class mainPage extends Component {
 	constructor(props) {
 		super(props);		
 		this.state = {
-			preventScroll: false
 		};
 	}
 	
@@ -21,9 +20,6 @@ class mainPage extends Component {
 
         if (this.props.authData)
 			containerClasses.push('_loggedIn');
-			
-		if (this.state.preventScroll)
-			containerClasses.push('_preventScroll');
 
 	    return <Container classes={containerClasses}>
 			<Header mainPage={true} authData={this.props.authData}/>
