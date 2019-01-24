@@ -9,8 +9,8 @@ class MainPageHeader extends Component {
 				{this.props.children}
 				<div class="mainPageHeader-about about">
 					<div class="about-text">
-						Зарабатывай <span>5 000 руб. в месяц</span><br />
-						просто запуская браузер<br />
+						Зарабатывай <span>5 000 руб. в месяц</span>{" "}<br />
+						просто запуская браузер{" "}<br />
 						на&nbsp;любом устройстве
 					</div>
 					<div class="about-buttons">
@@ -19,7 +19,7 @@ class MainPageHeader extends Component {
 								Начать майнить
 							</Link>
 							<div class="about-buttons-startMining-description">
-								Чтобы начать майнить и зарабатывать нажмите<br />
+								Чтобы начать майнить и зарабатывать нажмите{" "}<br />
 								на&nbsp;кнопку выше и не&nbsp;закрывайте эту вкладку
 							</div>
 						</div>

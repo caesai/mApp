@@ -14,7 +14,7 @@ class miningOnAnyDeviceAdvert extends Component {
                 Майнинг в&nbsp;браузере на&nbsp;любом устройстве
             </div>
             <div class="miningOnAnyDeviceAdvert-description">
-                Больше не требуется покупать дорогостоящее оборудование<br />
+                Больше не требуется покупать дорогостоящее оборудование{" "}<br />
                 и тратить свое время на настройку майнеров.
             </div>
             <div class="miningOnAnyDeviceAdvert-devicesList devicesList">

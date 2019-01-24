@@ -14,7 +14,7 @@ class startMiningBlock extends Component {
                 Начать майнить
             </Link>
             <div class="startMiningBlock-description">
-                Использование передовых технологий позволяет не&nbsp;устанавливая<br />
+                Использование передовых технологий позволяет не&nbsp;устанавливая{" "}<br />
                 никакого ПО майнить в&nbsp;браузере без&nbsp;потери эффективности!
             </div>
         </div>;
