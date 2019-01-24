@@ -31,10 +31,6 @@
         @include user-select(none);
         @include image-set("/static/images/dropDownArrow_big", "png");
 
-        &:hover{
-            color: #00b1ff;
-        }
-
         @media only screen and (max-width: 900px){
             font-size: 15px;
             line-height: 1.6;

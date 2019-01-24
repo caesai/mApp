@@ -16,6 +16,11 @@ class currencies extends Component {
     
     changePopupState(active) {
         this.setState({popupActive: active});
+
+        if (active)
+			document.body.classList.add('_preventScroll');
+		else
+			document.body.classList.remove('_preventScroll');
     }
 	
 	render() {

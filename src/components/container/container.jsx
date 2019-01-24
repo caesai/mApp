@@ -35,7 +35,7 @@ class footer extends Component {
         if (this.state.scrollTop)
         {
             containerClass.push('_headerFixed');
-        }
+		}
 
         if (this.props.classes && Array.isArray(this.props.classes))
         this.props.classes.forEach(function(element){

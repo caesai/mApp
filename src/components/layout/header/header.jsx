@@ -61,6 +61,11 @@ class HeaderData extends Component {
 		let menuPanelOpen = !this.state.menuPanelOpen;
 
 		this.setState({menuPanelOpen});
+
+		if (menuPanelOpen)
+			document.body.classList.add('_preventScroll');
+		else
+			document.body.classList.remove('_preventScroll');
 	}
 
 	toggleUserPanelMenuState(event) {
@@ -101,6 +106,13 @@ class HeaderData extends Component {
 				
 			userPanelMenuClasses = classNames(userPanelMenuClasses);
 
+			let userPanelNameClasses = ['userPanel-name'];
+
+			if (this.state.userPanelMenuOpen)
+				userPanelNameClasses.push('_open');	
+				
+			userPanelNameClasses = classNames(userPanelNameClasses);
+
 			return <React.Fragment>
 				<div className={headerClasses}>
 					<div class="header-logo">
@@ -113,7 +125,7 @@ class HeaderData extends Component {
 							<Link to="/"/>
 						</div>
 						<div class="header-menuPanel-userPanel userPanel">
-							<div class="userPanel-name" onClick={this.toggleUserPanelMenuState}>
+							<div className={userPanelNameClasses} onClick={this.toggleUserPanelMenuState}>
 								Andrey
 							</div>
 							<div class="userPanel-inProcess">

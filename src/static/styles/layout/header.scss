@@ -438,6 +438,10 @@
 
         &._open{
             @include image-set("/static/images/dropUpArrow", "png");
+
+            @media only screen and (max-width: 1300px){
+                background: none;
+            }
         }
 
         @media only screen and (max-width: 1300px){
