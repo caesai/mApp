@@ -19,6 +19,7 @@ import Addresses from '../private/addresses';
 import Login from '../login';
 import Registration from '../registration';
 import RestorePassword from '../restorePassword';
+import Test from '../test';
 
 import NotFound from '../notFound';
 import ServerError from '../serverError';
@@ -92,6 +93,9 @@ class MainRouter extends Component {
 				</Route>
 				<Route path="/registration/" exact>
 					<Registration authData={this.state.authData} />
+				</Route>
+				<Route path="/test/" exact>
+					<Test authData={this.state.authData} />
 				</Route>
 				<Route path="/restore-password/" exact>
 					<RestorePassword authData={this.state.authData} />
