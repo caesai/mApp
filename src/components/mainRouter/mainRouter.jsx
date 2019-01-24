@@ -25,7 +25,7 @@ import ServerError from '../serverError';
 
 const cookies = new Cookies();
 
-class mainRouter extends Component {
+class MainRouter extends Component {
 	constructor(props) {
 		super(props);		
 		this.state = {
@@ -36,93 +36,85 @@ class mainRouter extends Component {
 		this.authorize = this.authorize.bind(this);
 	}
 
-	restoreState() {
-		document.body.classList.remove('_preventScroll');
-	}
-
 	authorize() {
 		this.setState({authData: true});
 	}
-    
+
+	componentDidMount() {		
+		this.props.history.listen((location, action) => {
+			document.body.classList.remove('_preventScroll');
+		});
+	}
+
 	render() {
 		if (!this.state.loaded)
 		{
 			return (
 				<div>Загрузка</div>
 			);
-		} else {			
-			return (
-				<Router>
-					<Switch>
-						<Route path="/" exact render={() => {
-							this.restoreState();
-							return <MainPage authData={this.state.authData} />;
-						}} />
-						<Route path="/about/" exact render={() => {
-							this.restoreState();
-							return <About authData={this.state.authData} />;
-						}} />
-						<Route path="/blog/" exact render={() => {
-							this.restoreState();
-							return <Blog authData={this.state.authData} />;
-						}} />
-						<Route path="/contacts/" exact render={() => {
-							this.restoreState();
-							return <Contacts authData={this.state.authData} />;
-						}} />
-						<Route path="/feedback/" exact render={() => {
-							this.restoreState();
-							return <Feedback authData={this.state.authData} />;
-						}} />
-						<Route path="/how-it-works/" exact render={() => {
-							this.restoreState();
-							return <HowItWorks authData={this.state.authData} />;
-						}} />
-						<Route path="/where-to-spend/" exact render={() => {
-							this.restoreState();
-							return <WhereToSpend authData={this.state.authData} />;
-						}} />
-						<Route path="/private/currencies/" exact render={() => {
-							this.restoreState();
-							return <Currencies authData={this.state.authData} />;
-						}} />
-						<Route path="/private/settings/" exact render={() => {
-							this.restoreState();
-							return <Settings authData={this.state.authData} />;
-						}} />
-						<Route path="/private/addresses/" exact render={() => {
-							this.restoreState();
-							return <Addresses authData={this.state.authData} />;
-						}} />
-						<Route path="/mining/" exact render={() => {
-							this.restoreState();
-							return <Currencies authData={this.state.authData} />;
-						}} />
-						<Route path="/login/" exact render={() => {
-							this.restoreState();
-							return <Login authData={this.state.authData} authorize={this.authorize} />;
-						}} />
-						<Route path="/registration/" exact render={() => {
-							this.restoreState();
-							return <Registration authData={this.state.authData} />;
-						}} />
-						<Route path="/restore-password/" exact render={() => {
-							this.restoreState();
-							return <RestorePassword authData={this.state.authData} />;
-						}} />
-						<Route path="/503/" exact render={() => {
-							this.restoreState();
-							return <ServerError authData={this.state.authData} />;
-						}} />
-						<Route render={() => {
-							this.restoreState();
-							return <NotFound authData={this.state.authData} />;
-						}} />
-					</Switch>
-				</Router>
-			);
+		} else {
+			return <Switch>
+				<Route path="/" exact>
+					<MainPage authData={this.state.authData} />
+				</Route>     
+				<Route path="/about/" exact>
+					<About authData={this.state.authData} />
+				</Route>
+				<Route path="/blog/" exact>
+					<Blog authData={this.state.authData} />
+				</Route>
+				<Route path="/contacts/" exact>
+					<Contacts authData={this.state.authData} />
+				</Route>
+				<Route path="/feedback/" exact>
+					<Feedback authData={this.state.authData} />
+				</Route>
+				<Route path="/how-it-works/" exact>
+					<HowItWorks authData={this.state.authData} />
+				</Route>
+				<Route path="/where-to-spend/" exact>
+					<WhereToSpend authData={this.state.authData} />
+				</Route>
+				<Route path="/private/currencies/" exact>
+					<Currencies authData={this.state.authData} />
+				</Route>
+				<Route path="/private/settings/" exact>
+					<Settings authData={this.state.authData} />
+				</Route>
+				<Route path="/private/addresses/" exact>
+					<Addresses authData={this.state.authData} />
+				</Route>						
+				<Route path="/mining/" exact>
+					<Currencies authData={this.state.authData} />
+				</Route>
+				<Route path="/login/" exact>
+					<Login authData={this.state.authData} authorize={this.authorize} />
+				</Route>
+				<Route path="/registration/" exact>
+					<Registration authData={this.state.authData} />
+				</Route>
+				<Route path="/restore-password/" exact>
+					<RestorePassword authData={this.state.authData} />
+				</Route>
+				<Route path="/503/" exact>
+					<ServerError authData={this.state.authData} />
+				</Route>
+				<Route>
+					<NotFound authData={this.state.authData} />
+				</Route>
+			</Switch>;
 		}
 	}
 }
 
-export default mainRouter;
+class historyMaker extends Component {    
+	render() {					
+		return (
+			<Router>
+				<Route component={MainRouter} />
+			</Router>
+		);
+	}
+}
+
+export default historyMaker;
