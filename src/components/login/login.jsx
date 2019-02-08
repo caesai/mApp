@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import Header from '../layout/header';
+import { connect } from 'react-redux'
+import { signIn } from '../../store/actions/authActions'
+import { Link } from 'react-router-dom'
 import Footer from '../layout/footer';
 import Container from '../container';
 
@@ -7,48 +9,81 @@ class login extends Component {
 	constructor(props) {
 		super(props);		
 		this.state = {
+            username: '',
+            email: '',
+            password: ''
 		};
-	}
+    }
+    
+    handleChange = (e) => {
+        console.log(e);
+        this.setState({
+          [e.target.id]: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(this.props.auth);
+        this.props.signIn(this.state);
+        console.log(this.props.auth);
+    }
 	
 	render() {		
+        const { authError, auth } = this.props;
 	    let containerClasses = ['_innerPage'];
 
-        if (this.props.authData)
+        if (auth.uid)
             containerClasses.push('_loggedIn');
 
-	    return <Container classes={containerClasses}>
-            <Header authData={this.props.authData} />				
-                <div class="content _loginPage">
-                    <div class="content-title">
+	    return <Container classes={containerClasses}>	
+                <div className="content _loginPage">
+                    <div className="content-title">
                         Вход
                     </div>
-                    <div class="content-loginForm loginForm form">
-                        <div class="loginForm-field form-field _error">
-                            <input type="text" name="email" value="test@testru" placeholder="Эл. адрес" />
+                    <form className="content-loginForm loginForm form" onSubmit={this.handleSubmit}>
+                        <div className="loginForm-field form-field">
+                            <input type="text" id="email" placeholder="Эл. адрес" onChange={this.handleChange}/>
                         </div>
-                        <div class="loginForm-field form-field">
-                            <input type="password" name="email" value="" placeholder="Пароль" />
+                        <div className="loginForm-field form-field">                        
+                            <input type="password" id="password" placeholder="Пароль" onChange={this.handleChange} />
                         </div>
-                        <div class="loginForm-restorePassword">
+                        <div className="loginForm-restorePassword">
                             Забыли пароль?
                         </div>
-                        <div class="loginForm-submit form-submit button _blue" onClick={() => this.props.authorize()}>
-                            Войти
+                        <div className="loginForm-submit form-submit">                            
+                            <button className="form-submit button _blue">Войти</button>
+                            <div className="form-submit">
+                                { authError ? <p>{authError}</p> : null }
+                            </div>
                         </div>
-                        <div class="loginForm-registration">
-                            <div class="loginForm-registration-label">
+                        <div className="loginForm-registration">
+                            <div className="loginForm-registration-label">
                                 Нет аккаунта?
                             </div>
-                            <div class="loginForm-registration-link">
-                                Зарегистрироваться
+                            <div className="loginForm-registration-link">
+                                <Link to='/registration'>Зарегистрироваться</Link>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             <Footer />
         </Container>;
 	}
 }
 
-export default login;
+const mapStateToProps = (state) => {
+    return{
+      authError: state.auth.authError,
+      auth: state.firebase.auth
+    }
+  }
+  
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      signIn: (creds) => dispatch(signIn(creds))
+    }
+  }
+  
+  export default connect(mapStateToProps, mapDispatchToProps)(login);
 

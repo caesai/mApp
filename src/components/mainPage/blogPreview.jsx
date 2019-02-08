@@ -17,7 +17,7 @@ class blogPreview extends Component {
                 <div class="blogPreview-list-item blogPreviewItem">
                     <div class="blogPreviewItem-image">
                         <img src="/static/tmp/images/test01.png"
-                        srcset="/static/tmp/images/test01@2x.png 2x,
+                        srcSet="/static/tmp/images/test01@2x.png 2x,
                         /static/tmp/images/test01@3x.png 3x" />
                     </div>
                     <div class="blogPreviewItem-title">
@@ -30,7 +30,7 @@ class blogPreview extends Component {
                 <div class="blogPreview-list-item blogPreviewItem">
                     <div class="blogPreviewItem-image">
                         <img src="/static/tmp/images/test01.png"
-                        srcset="/static/tmp/images/test01@2x.png 2x,
+                        srcSet="/static/tmp/images/test01@2x.png 2x,
                         /static/tmp/images/test01@3x.png 3x" />
                     </div>
                     <div class="blogPreviewItem-title">
@@ -43,7 +43,7 @@ class blogPreview extends Component {
                 <div class="blogPreview-list-item blogPreviewItem">
                     <div class="blogPreviewItem-image">
                         <img src="/static/tmp/images/test01.png"
-                        srcset="/static/tmp/images/test01@2x.png 2x,
+                        srcSet="/static/tmp/images/test01@2x.png 2x,
                         /static/tmp/images/test01@3x.png 3x" />
                     </div>
                     <div class="blogPreviewItem-title">
